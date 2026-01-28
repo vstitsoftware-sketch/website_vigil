@@ -1,0 +1,98 @@
+import { Star, Quote } from "lucide-react";
+
+const testimonials = [
+  {
+    name: "Sarah Chen",
+    role: "CEO, TechVision Inc.",
+    content: "Vijil transformed our operations completely. Their team's expertise and dedication exceeded all our expectations. Revenue increased by 40% in the first year.",
+    rating: 5,
+  },
+  {
+    name: "Michael Rodriguez",
+    role: "COO, Global Logistics",
+    content: "The analytics platform gave us insights we never had before. Decision-making is now data-driven and our efficiency has improved dramatically.",
+    rating: 5,
+  },
+  {
+    name: "Emily Thompson",
+    role: "CTO, HealthCare Plus",
+    content: "Security was our biggest concern. Vijil Secure not only protected our data but also helped us achieve compliance ahead of schedule.",
+    rating: 5,
+  },
+  {
+    name: "David Park",
+    role: "Director, FinanceFirst",
+    content: "The ROI from implementing Vijil Core was visible within months. Their support team is responsive and truly understands our business needs.",
+    rating: 5,
+  },
+];
+
+const TestimonialsSection = () => {
+  return (
+    <section id="testimonials" className="py-24 bg-secondary/30">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-accent font-semibold text-sm uppercase tracking-wider">
+            Client Testimonials
+          </span>
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mt-4 mb-6">
+            Trusted by Industry Leaders
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Hear from our clients about how Vijil has helped them achieve their
+            business goals.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={testimonial.name}
+              className="p-8 bg-card rounded-2xl shadow-soft hover:shadow-elevated transition-all duration-300 relative"
+            >
+              <Quote className="absolute top-6 right-6 h-10 w-10 text-accent/20" />
+
+              <div className="flex gap-1 mb-4">
+                {Array.from({ length: testimonial.rating }).map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-accent text-accent" />
+                ))}
+              </div>
+
+              <p className="text-foreground text-lg mb-6 leading-relaxed">
+                "{testimonial.content}"
+              </p>
+
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+                  <span className="font-semibold text-accent">
+                    {testimonial.name.split(" ").map((n) => n[0]).join("")}
+                  </span>
+                </div>
+                <div>
+                  <div className="font-semibold text-foreground">{testimonial.name}</div>
+                  <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Logos Section */}
+        <div className="mt-20 pt-16 border-t border-border">
+          <p className="text-center text-muted-foreground mb-8">
+            Trusted by leading companies worldwide
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-12 opacity-50">
+            {["TechCorp", "GlobalBank", "InnovateCo", "FutureGen", "DataPrime"].map((company) => (
+              <div key={company} className="text-2xl font-serif font-bold text-muted-foreground">
+                {company}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default TestimonialsSection;
