@@ -2,8 +2,9 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Globe } from "lucide-react";
 import { toast } from "sonner";
+import { submitContactForm } from "@/services/api";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -12,11 +13,22 @@ const ContactSection = () => {
     company: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Thank you for your message! We'll be in touch soon.");
-    setFormData({ name: "", email: "", company: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      await submitContactForm(formData);
+      toast.success("Thank you for your message! We'll be in touch soon.");
+      setFormData({ name: "", email: "", company: "", message: "" });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Something went wrong. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -44,8 +56,8 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <div className="font-semibold text-foreground">Email Us</div>
-                  <a href="mailto:hello@vijil.com" className="text-muted-foreground hover:text-accent transition-colors">
-                    hello@vijil.com
+                  <a href="mailto:info@vigiltron.com" className="text-muted-foreground hover:text-accent transition-colors">
+                    info@vigiltron.com
                   </a>
                 </div>
               </div>
@@ -56,8 +68,8 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <div className="font-semibold text-foreground">Call Us</div>
-                  <a href="tel:+1-555-000-0000" className="text-muted-foreground hover:text-accent transition-colors">
-                    +1 (555) 000-0000
+                  <a href="tel:0831-2451566" className="text-muted-foreground hover:text-accent transition-colors">
+                    0831-2451566
                   </a>
                 </div>
               </div>
@@ -69,9 +81,22 @@ const ContactSection = () => {
                 <div>
                   <div className="font-semibold text-foreground">Visit Us</div>
                   <p className="text-muted-foreground">
-                    123 Innovation Drive<br />
-                    San Francisco, CA 94102
+                    Plot No. 59, 1st Floor, Shardha Niwas<br />
+                    Nyay Marg, Subhas Nagar<br />
+                    Belagavi - 590010
                   </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
+                  <Globe className="h-5 w-5 text-accent" />
+                </div>
+                <div>
+                  <div className="font-semibold text-foreground">Website</div>
+                  <a href="https://www.vigiltron.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors">
+                    www.vigiltron.com
+                  </a>
                 </div>
               </div>
             </div>
@@ -130,8 +155,8 @@ const ContactSection = () => {
                 />
               </div>
 
-              <Button variant="accent" size="lg" className="w-full">
-                Send Message
+              <Button variant="accent" size="lg" className="w-full" disabled={isSubmitting}>
+                {isSubmitting ? "Sending..." : "Send Message"}
                 <Send className="ml-2 h-5 w-5" />
               </Button>
             </form>

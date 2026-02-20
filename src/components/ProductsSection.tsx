@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const products = [
   {
-    name: "Vijil Core",
+    name: "Vigil Core",
     tagline: "Enterprise Resource Planning",
     description: "All-in-one ERP solution for seamless business operations.",
     features: [
@@ -16,7 +16,7 @@ const products = [
     popular: false,
   },
   {
-    name: "Vijil Analytics",
+    name: "Vigil Analytics",
     tagline: "Business Intelligence Platform",
     description: "Transform data into actionable insights with AI-powered analytics.",
     features: [
@@ -29,7 +29,7 @@ const products = [
     popular: true,
   },
   {
-    name: "Vijil Secure",
+    name: "Vigil Secure",
     tagline: "Cybersecurity Suite",
     description: "Comprehensive security solutions to protect your digital assets.",
     features: [

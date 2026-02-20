@@ -14,9 +14,9 @@ const footerLinks = {
     { name: "Cloud Solutions", href: "#services" },
   ],
   products: [
-    { name: "Vijil Core", href: "#products" },
-    { name: "Vijil Analytics", href: "#products" },
-    { name: "Vijil Secure", href: "#products" },
+    { name: "Vigil Everywhere Core", href: "#products" },
+    { name: "Vigil Everywhere Analytics", href: "#products" },
+    { name: "Vigil Everywhere Secure", href: "#products" },
     { name: "Pricing", href: "#" },
   ],
   support: [
@@ -41,8 +41,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <a href="#" className="font-serif text-3xl font-bold">
-              Vijil
+            <a href="#" className="block">
+              <img src="/vigil-logo.png" alt="Vigil Everywhere" className="h-32 w-auto" />
             </a>
             <p className="text-primary-foreground/70 mt-4 mb-6 max-w-sm">
               Empowering businesses with innovative solutions and strategic
@@ -118,7 +118,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-primary-foreground/60">
-            © 2024 Vijil. All rights reserved.
+            © 2024 Vigil Everywhere. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-primary-foreground/60">
             <a href="#" className="hover:text-primary-foreground transition-colors">

@@ -4,25 +4,25 @@ const testimonials = [
   {
     name: "Sarah Chen",
     role: "CEO, TechVision Inc.",
-    content: "Vijil transformed our operations completely. Their team's expertise and dedication exceeded all our expectations. Revenue increased by 40% in the first year.",
+    content: "Vigil transformed our operations completely. Their team's expertise and dedication exceeded all our expectations. Revenue increased by 40% in the first year.",
     rating: 5,
   },
   {
     name: "Michael Rodriguez",
     role: "COO, Global Logistics",
-    content: "The analytics platform gave us insights we never had before. Decision-making is now data-driven and our efficiency has improved dramatically.",
+    content: "Vigil's analytics platform gave us insights we never had before. Decision-making is now data-driven and our efficiency has improved dramatically.",
     rating: 5,
   },
   {
     name: "Emily Thompson",
     role: "CTO, HealthCare Plus",
-    content: "Security was our biggest concern. Vijil Secure not only protected our data but also helped us achieve compliance ahead of schedule.",
+    content: "Security was our biggest concern. Vigil not only protected our data but also helped us achieve compliance ahead of schedule.",
     rating: 5,
   },
   {
     name: "David Park",
     role: "Director, FinanceFirst",
-    content: "The ROI from implementing Vijil Core was visible within months. Their support team is responsive and truly understands our business needs.",
+    content: "The ROI from implementing Vigil's solutions was visible within months. Their support team is responsive and truly understands our business needs.",
     rating: 5,
   },
 ];
@@ -39,7 +39,7 @@ const TestimonialsSection = () => {
             Trusted by Industry Leaders
           </h2>
           <p className="text-lg text-muted-foreground">
-            Hear from our clients about how Vijil has helped them achieve their
+            Hear from our clients about how Vigil has helped them achieve their
             business goals.
           </p>
         </div>

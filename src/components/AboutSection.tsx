@@ -1,25 +1,30 @@
-import { Target, Users, Lightbulb, Award } from "lucide-react";
+import { Users, Target, CheckCircle, Zap, Trophy } from "lucide-react";
 
 const values = [
   {
-    icon: Target,
-    title: "Mission-Driven",
-    description: "We're committed to delivering results that matter to your business.",
-  },
-  {
     icon: Users,
-    title: "Client-Focused",
-    description: "Your success is our priority. We build lasting partnerships.",
+    title: "CUSTOMER FOCUS",
+    description: "Believe in customer satisfaction and long term relationship.",
   },
   {
-    icon: Lightbulb,
-    title: "Innovation First",
-    description: "Staying ahead with cutting-edge solutions and methodologies.",
+    icon: Target,
+    title: "MEET THE TARGET",
+    description: "A fully integrated team capable of working under pressure to complete the works within the target timelines.",
   },
   {
-    icon: Award,
-    title: "Excellence",
-    description: "Uncompromising quality in every project we undertake.",
+    icon: CheckCircle,
+    title: "QUALITY CONTROL",
+    description: "Experienced professionals & technicians' team & trusted products with focus on cost effectiveness.",
+  },
+  {
+    icon: Zap,
+    title: "INNOVATION",
+    description: "We strive for applying smart and innovative thoughts and actions to ensure complete safety of our customers.",
+  },
+  {
+    icon: Trophy,
+    title: "PASSION TO WIN",
+    description: "Competitive approach at all levels of customer service.",
   },
 ];
 
@@ -33,35 +38,21 @@ const AboutSection = () => {
             <span className="text-accent font-semibold text-sm uppercase tracking-wider">
               About Us
             </span>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mt-4 mb-6">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mt-4 mb-8">
               Building Tomorrow's Solutions Today
             </h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              Founded in 2015, Vijil has grown from a small startup to a leading
-              provider of innovative business solutions. Our team of experts brings
-              together decades of experience across multiple industries.
+            <p className="text-lg text-muted-foreground mb-6 text-justify leading-relaxed">
+              Vigil Everywhere Safety Technologies delivers advanced safety and security solutions designed to build smarter, safer infrastructure across diverse industries. From manufacturing facilities and government projects to healthcare, education, banking, hospitality, and smart city developments, Vigil Everywhere partners with organizations to protect what matters most.
             </p>
-            <p className="text-lg text-muted-foreground mb-8">
-              We believe in creating meaningful impact through technology and
-              strategic thinking. Our approach combines deep industry knowledge
-              with cutting-edge tools to deliver exceptional results.
+            <p className="text-lg text-muted-foreground mb-6 text-justify leading-relaxed">
+              With a strong presence across Karnataka, Goa, and Maharashtra, we are recognized as a trusted systems integrator and solution provider for complex, large-scale deployments. Our expertise spans design, supply, installation, and commissioning of complete safety and surveillance ecosystems tailored to each client's operational needs.
             </p>
-            <div className="flex items-center gap-4">
-              <div className="flex -space-x-3">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="w-10 h-10 rounded-full bg-secondary border-2 border-background flex items-center justify-center text-xs font-medium"
-                  >
-                    {String.fromCharCode(64 + i)}
-                  </div>
-                ))}
-              </div>
-              <div>
-                <div className="font-semibold text-foreground">100+ Team Members</div>
-                <div className="text-sm text-muted-foreground">Working globally</div>
-              </div>
-            </div>
+            <p className="text-lg text-muted-foreground mb-6 text-justify leading-relaxed">
+              Backed by a skilled network of engineers and technicians across the region, Vigil Everywhere ensures rapid on-site support and seamless project execution. We specialize in delivering innovative solutions within challenging environments—meeting tight timelines without compromising precision, performance, or compliance.
+            </p>
+            <p className="text-lg text-muted-foreground mb-8 text-justify leading-relaxed font-semibold">
+              At Vigil Everywhere, safety is not just a service—it is a commitment to building secure, future-ready spaces.
+            </p>
           </div>
 
           {/* Right Content - Values Grid */}
@@ -69,14 +60,18 @@ const AboutSection = () => {
             {values.map((value, index) => (
               <div
                 key={value.title}
-                className="p-6 bg-card rounded-xl shadow-soft hover:shadow-elevated transition-all duration-300 group"
+                className={`p-6 bg-card rounded-xl shadow-soft hover:shadow-elevated transition-all duration-300 group ${value.title === "PASSION TO WIN" ? "sm:col-span-2 max-w-xs mx-auto text-center" : ""
+                  }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+                <div className={`w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors ${value.title === "PASSION TO WIN" ? "mx-auto" : ""
+                  }`}>
                   <value.icon className="h-6 w-6 text-accent" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">{value.title}</h3>
-                <p className="text-sm text-muted-foreground">{value.description}</p>
+                <h3 className={`font-semibold text-foreground mb-2 ${value.title === "PASSION TO WIN" ? "text-center" : ""
+                  }`}>{value.title}</h3>
+                <p className={`text-sm text-muted-foreground text-justify leading-relaxed ${value.title === "PASSION TO WIN" ? "text-center" : ""
+                  }`}>{value.description}</p>
               </div>
             ))}
           </div>

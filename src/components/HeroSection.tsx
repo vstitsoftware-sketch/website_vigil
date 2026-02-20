@@ -25,7 +25,7 @@ const HeroSection = () => {
           </h1>
 
           <p className="text-xl text-primary-foreground/70 mb-10 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            Vijil delivers innovative solutions that transform the way you work.
+            Vigil Everywhere delivers innovative solutions that transform the way you work.
             We combine cutting-edge technology with strategic expertise to drive
             measurable results.
           </p>
