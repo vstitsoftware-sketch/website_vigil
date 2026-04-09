@@ -22,6 +22,7 @@ import TourGuard from "./pages/services/TourGuard";
 import KeyManagement from "./pages/services/KeyManagement";
 import CareersPage from "./pages/CareersPage";
 import JobDetailsPage from "./pages/JobDetailsPage";
+import HRPortal from "./pages/HRPortal";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +51,7 @@ const App = () => (
           <Route path="/services/key-management" element={<KeyManagement />} />
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/careers/:id" element={<JobDetailsPage />} />
+          <Route path="/hr-portal" element={<HRPortal />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

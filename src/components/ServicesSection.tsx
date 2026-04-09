@@ -112,9 +112,10 @@ const ServicesSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayedServices.map((service, index) => (
-            <div
+            <Link
               key={service.title}
-              className="group p-8 bg-card rounded-2xl shadow-soft hover:shadow-elevated transition-all duration-300 hover:-translate-y-1"
+              to={service.link || "#contact"}
+              className="group p-8 bg-card rounded-2xl shadow-soft hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 block"
             >
               <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
                 <service.icon className="h-7 w-7 text-accent group-hover:text-accent-foreground transition-colors" />
@@ -123,22 +124,10 @@ const ServicesSection = () => {
                 {service.title}
               </h3>
               <p className="text-muted-foreground mb-4">{service.description}</p>
-              {service.link ? (
-                <Link
-                  to={service.link}
-                  className="text-accent font-medium text-sm hover:underline inline-flex items-center gap-1 group-hover:gap-2 transition-all"
-                >
-                  Learn more →
-                </Link>
-              ) : (
-                <a
-                  href="#contact"
-                  className="text-accent font-medium text-sm hover:underline inline-flex items-center gap-1 group-hover:gap-2 transition-all"
-                >
-                  Learn more →
-                </a>
-              )}
-            </div>
+              <span className="text-accent font-medium text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                Learn more →
+              </span>
+            </Link>
           ))}
         </div>
 

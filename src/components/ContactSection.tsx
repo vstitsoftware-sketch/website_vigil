@@ -81,9 +81,9 @@ const ContactSection = () => {
                 <div>
                   <div className="font-semibold text-foreground">Visit Us</div>
                   <p className="text-muted-foreground">
-                    Plot No. 59, 1st Floor, Shardha Niwas<br />
-                    Nyay Marg, Subhas Nagar<br />
-                    Belagavi - 590010
+                    1st Floor, Nabbuwale Building,<br />
+                    Near S P Office, Nyay Marg<br />
+                    Subhas Nagar, Belagavi - 590010<br />
                   </p>
                 </div>
               </div>
@@ -111,7 +111,7 @@ const ContactSection = () => {
                     Your Name
                   </label>
                   <Input
-                    placeholder="John Doe"
+                    placeholder="Amit Kumar"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
@@ -123,7 +123,7 @@ const ContactSection = () => {
                   </label>
                   <Input
                     type="email"
-                    placeholder="john@company.com"
+                    placeholder="amit@company.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
@@ -136,7 +136,7 @@ const ContactSection = () => {
                   Company Name
                 </label>
                 <Input
-                  placeholder="Your Company"
+                  placeholder="Your Company Name"
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                 />

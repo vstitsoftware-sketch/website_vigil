@@ -41,7 +41,7 @@ const CareersPage = () => {
                         Shape the Future With Us
                     </h1>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        At Vigil Everywhere, we're passionate about building technology that shapes the future.
+                        At Vigil Safety Technologies, we're passionate about building technology that shapes the future.
                         We're always looking for creative thinkers, problem solvers, and innovators to join our team.
                         Discover a place where your work matters and your growth is encouraged.
                     </p>

@@ -21,80 +21,39 @@ export interface JobApplication {
     resume_url?: string;
 }
 
-export const uploadResume = async (file: File) => {
-    const fileExt = file.name.split('.').pop();
-    const fileName = `${Math.random()}.${fileExt}`;
-    const filePath = `${fileName}`;
+export const uploadResume = async (file: File): Promise<string | null> => {
+    try {
+        const fileExt = file.name.split('.').pop();
+        const fileName = `${Date.now()}_${Math.random().toString(36).substring(2)}.${fileExt}`;
+        const filePath = `${fileName}`;
 
-    const { error } = await supabase.storage
-        .from('resumes')
-        .upload(filePath, file);
+        const { error } = await supabase.storage
+            .from('resumes')
+            .upload(filePath, file);
 
-    if (error) {
-        throw error;
+        if (error) {
+            console.warn("Resume upload failed (storage bucket may not exist):", error.message);
+            return null;
+        }
+
+        // Get the public URL for the uploaded file
+        const { data: urlData } = supabase.storage
+            .from('resumes')
+            .getPublicUrl(filePath);
+
+        return urlData?.publicUrl || filePath;
+    } catch (err) {
+        console.warn("Resume upload error:", err);
+        return null;
     }
-
-    return filePath;
 };
 
-// Fallback data to ensure jobs appear immediately
-const FALLBACK_JOBS: Job[] = [
-    {
-        id: "soft-eng-1",
-        title: "Software Engineer",
-        department: "Engineering",
-        location: "Remote",
-        type: "Full-time",
-        description: "We are seeking a talented Software Engineer to join our dynamic team. You will be instrumental in developing robust software solutions that drive our business forward. In this role, you will work on the full software development lifecycle, from conception to deployment.",
-        responsibilities: [
-            "Develop, test, and maintain high-quality software applications",
-            "Collaborate with cross-functional teams to define and design new features",
-            "Troubleshoot and debug applications to ensure optimal performance",
-            "Participate in code reviews and contribute to engineering best practices",
-            "Write clean, scalable, and efficient code"
-        ],
-        requirements: [
-            "Bachelor’s degree in Computer Science or related field",
-            "Proficiency in JavaScript/TypeScript and React",
-            "Experience with backend technologies like Node.js or Python",
-            "Solid understanding of database management systems (SQL/NoSQL)",
-            "Strong problem-solving and communication skills"
-        ],
-        created_at: new Date().toISOString()
-    },
-    {
-        id: "hard-eng-1",
-        title: "Hardware Engineer",
-        department: "Engineering",
-        location: "On-site",
-        type: "Full-time",
-        description: "We are looking for a skilled Hardware Engineer to design and develop cutting-edge hardware components. You will work closely with our product and software teams to integrate hardware and software solutions seamlessly.",
-        responsibilities: [
-            "Design and develop hardware schematics and PCB layouts",
-            "Perform hardware testing and validation",
-            "Collaborate with manufacturing teams to ensure product quality",
-            "Troubleshoot hardware issues and provide technical support",
-            "Stay updated with the latest hardware technologies and trends"
-        ],
-        requirements: [
-            "Bachelor’s degree in Electrical Engineering or related field",
-            "Experience with PCB design software (e.g., Altium, Eagle)",
-            "Knowledge of analog and digital circuit design",
-            "Hands-on experience with soldering and hardware testing equipment",
-            "Ability to work independently and as part of a team"
-        ],
-        created_at: new Date().toISOString()
-    }
-];
-
 export const getJobs = async () => {
-    // Try fetching from Supabase first
     const { data, error } = await supabase
         .from('jobs')
         .select('*')
         .order('created_at', { ascending: false });
 
-    // If DB has error, log it
     if (error) {
         console.error("Error fetching jobs:", error);
         return [];
@@ -104,10 +63,6 @@ export const getJobs = async () => {
 };
 
 export const getJobById = async (id: string) => {
-    // Check if it's one of our fallback IDs
-    // const fallbackJob = FALLBACK_JOBS.find(j => j.id === id);
-    // if (fallbackJob) return fallbackJob;
-
     const { data, error } = await supabase
         .from('jobs')
         .select('*')
@@ -119,11 +74,85 @@ export const getJobById = async (id: string) => {
 };
 
 export const submitJobApplication = async (application: JobApplication) => {
+    // Clean up the payload: remove resume_url if it's null/undefined
+    const payload: Record<string, unknown> = {
+        job_id: application.job_id,
+        full_name: application.full_name,
+        email: application.email,
+        phone: application.phone,
+    };
+
+    if (application.cover_letter) {
+        payload.cover_letter = application.cover_letter;
+    }
+
+    if (application.resume_url) {
+        payload.resume_url = application.resume_url;
+    }
+
     const { error } = await supabase
         .from('job_applications')
-        .insert([application]);
+        .insert([payload]);
 
-    if (error) throw error;
+    if (error) {
+        console.error("Supabase insert error:", error);
+        throw error;
+    }
     return true;
+};
+
+// --- HR Portal API ---
+
+export interface JobApplicationWithDetails {
+    id: string;
+    job_id: string;
+    full_name: string;
+    email: string;
+    phone: string;
+    cover_letter: string | null;
+    resume_url: string | null;
+    created_at: string;
+    jobs: {
+        title: string;
+        department: string;
+        location: string;
+        type: string;
+    } | null;
+}
+
+export const getJobApplications = async (): Promise<JobApplicationWithDetails[]> => {
+    const { data, error } = await supabase
+        .from('job_applications')
+        .select(`
+            *,
+            jobs (
+                title,
+                department,
+                location,
+                type
+            )
+        `)
+        .order('created_at', { ascending: false });
+
+    if (error) {
+        console.error("Error fetching applications:", error);
+        // If the join fails (e.g. job_id is text not uuid), fall back to raw query
+        const { data: rawData, error: rawError } = await supabase
+            .from('job_applications')
+            .select('*')
+            .order('created_at', { ascending: false });
+
+        if (rawError) {
+            console.error("Error fetching raw applications:", rawError);
+            return [];
+        }
+
+        return (rawData || []).map((app: Record<string, unknown>) => ({
+            ...app,
+            jobs: null,
+        })) as JobApplicationWithDetails[];
+    }
+
+    return (data || []) as JobApplicationWithDetails[];
 };
 

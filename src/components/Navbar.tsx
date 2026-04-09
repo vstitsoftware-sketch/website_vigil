@@ -19,7 +19,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <a href="#" className="flex items-center gap-2">
-            <img src="/vigil-logo.png" alt="Vigil Everywhere" className="h-16 w-auto" />
+            <img src="/Vigil.png" alt="Vigil" className="h-16 w-auto" />
           </a>
 
           {/* Desktop Navigation */}

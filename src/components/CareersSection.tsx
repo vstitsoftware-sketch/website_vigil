@@ -44,7 +44,7 @@ const CareersSection = () => {
               Join Our Team
             </span>
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mt-4 mb-6">
-              Build Your Career at Vigil Everywhere
+              Build Your Career at Vigil Safety Technologies
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
               We're looking for passionate individuals who want to make an impact.

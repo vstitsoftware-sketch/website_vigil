@@ -46,14 +46,20 @@ const JobDetailsPage = () => {
 
         setIsSubmitting(true);
         try {
-            // 1. Upload Resume
-            const resumePath = await uploadResume(file);
+            // 1. Try to upload Resume (non-blocking if storage fails)
+            let resumeUrl: string | undefined = undefined;
+            if (file) {
+                const uploadedUrl = await uploadResume(file);
+                if (uploadedUrl) {
+                    resumeUrl = uploadedUrl;
+                }
+            }
 
-            // 2. Save to Database
+            // 2. Save to Database (always succeeds even without resume URL)
             await submitJobApplication({
                 job_id: job.id,
                 ...formData,
-                resume_url: resumePath
+                resume_url: resumeUrl,
             });
 
             toast.success("Application submitted successfully!");
@@ -161,7 +167,7 @@ const JobDetailsPage = () => {
                                     <label className="block text-sm font-medium mb-1.5">Full Name</label>
                                     <Input
                                         required
-                                        placeholder="John Doe"
+                                        placeholder="Amit Kumar"
                                         value={formData.full_name}
                                         onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
                                     />
@@ -172,7 +178,7 @@ const JobDetailsPage = () => {
                                     <Input
                                         type="email"
                                         required
-                                        placeholder="john@example.com"
+                                        placeholder="amit@example.com"
                                         value={formData.email}
                                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                     />
@@ -182,7 +188,7 @@ const JobDetailsPage = () => {
                                     <label className="block text-sm font-medium mb-1.5">Phone</label>
                                     <Input
                                         required
-                                        placeholder="+1 (555) 000-0000"
+                                        placeholder="+91 98765 43210"
                                         value={formData.phone}
                                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                                     />
