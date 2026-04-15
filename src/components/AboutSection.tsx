@@ -1,5 +1,57 @@
 import { Eye, Target } from "lucide-react";
 
+const trustedPartners = [
+  { name: "Government of Karnataka", logo: "/partners/karnataka-govt.jpg" },
+  { name: "Indian Army", logo: "/partners/indian-army.png" },
+  { name: "Indian Navy", logo: "/partners/indian-navy.png" },
+  { name: "Karnataka State Police", logo: "/partners/karnataka-police.jpg" },
+  { name: "The Times of India", logo: "/partners/times-of-india.png" },
+  { name: "Hospaccx", logo: "/partners/hospaccx.png" },
+  { name: "Shree Renuka Sugars", logo: "/partners/shree-renuka-sugars.jpg" },
+  { name: "Tata Motors", logo: "/partners/tata-motors.jpg" },
+  { name: "OYO", logo: "/partners/oyo.png" },
+  { name: "Aditya Birla Group", logo: "/partners/aditya-birla-group.jpg" },
+  { name: "Aequs", logo: "/partners/aequs.png" },
+  { name: "Aster Aadhar Hospital", logo: "/partners/aster-aadhar-hospital.png" },
+  { name: "Bajaj Electricals Ltd.", logo: "/partners/bajaj-electricals.png" },
+  { name: "Honda", logo: "/partners/honda.png" },
+  { name: "Hyundai", logo: "/partners/hyundai.png" },
+  { name: "Indian Oil Corporation", logo: "/partners/indian-oil.png" },
+  { name: "Olam", logo: "/partners/olam.jpg" },
+  { name: "Toyota", logo: "/partners/toyota.jpg" },
+  { name: "GeM (Govt. e Marketplace)", logo: "/partners/gem.webp" },
+  { name: "Bharat Petroleum", logo: "/partners/bharat-petroleum.jpg" },
+  { name: "Ford", logo: "/partners/ford.jpg" },
+  { name: "Jain Group of Institutions", logo: "/partners/jain-group.webp" },
+  { name: "Parle", logo: "/partners/parle.png" },
+  { name: "Lakeview Hospital", logo: "/partners/lakeview-hospital.jpg" },
+  { name: "Hotel Eefa", logo: "/partners/hotel-eefa.png" },
+  { name: "KLE Society", logo: "/partners/kle-society.png" },
+  { name: "KLES Dr. Prabhakar Kore Hospital", logo: "/partners/kles-hospital.jpg" },
+  { name: "Ashok Iron Works Pvt. Ltd.", logo: "/partners/ashok-iron-works.jpg" },
+  { name: "Menon Alkop Pvt. Ltd.", logo: "/partners/menon-alkop.jpg" },
+  { name: "Noorani Corbel", logo: "/partners/noorani-corbel.jpg" },
+  { name: "Niyaaz", logo: "/partners/niyaaz.png" },
+  { name: "Prince Pipes", logo: "/partners/prince-pipes.webp" },
+  { name: "Shivshakti Sugars", logo: "/partners/shivshakti-sugars.png" },
+  { name: "Venugram Hospital", logo: "/partners/venugram-hospital.png" },
+  { name: "Regenta Hotels & Resorts", logo: "/partners/regenta-hotels.png" },
+  { name: "Anjuman-E-Islamia", logo: "/partners/anjuman-e-islamia.jpg" },
+  { name: "St. Paul's P.U. College", logo: "/partners/st-pauls-college.png" },
+  { name: "Karnataka Law Society", logo: "/partners/karnataka-law-society.png" },
+  { name: "Indus Altum Learning Centre", logo: "/partners/indus-altum.webp" },
+  { name: "Jinabakul Forge", logo: "/partners/jinabakul-forge.png" },
+];
+
+const TrustedPartnerCard = ({ partner }: { partner: { name: string; logo: string } }) => (
+  <div className="flex flex-col items-center justify-center p-2 transition-all group flex-shrink-0" style={{ width: "200px" }}>
+    <div className="w-24 h-24 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+      <img src={partner.logo} alt={partner.name} className="w-full h-full object-contain" />
+    </div>
+    <h3 className="font-semibold text-foreground text-center text-sm">{partner.name}</h3>
+  </div>
+);
+
 const AboutSection = () => {
   return (
     <section id="about" className="py-24 bg-background">
@@ -72,7 +124,39 @@ const AboutSection = () => {
 
           </div>
         </div>
+        <div className="mt-20 overflow-hidden">
+          <h3 className="text-2xl font-bold text-center mb-8 text-foreground/80">Trusted Partners</h3>
+          <div
+            className="relative w-full overflow-hidden"
+            style={{
+              maskImage: "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
+              WebkitMaskImage: "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
+            }}
+          >
+            <div
+              className="flex gap-6 py-4"
+              style={{
+                animation: `about-scroll ${trustedPartners.length * 3}s linear infinite`,
+                width: "max-content",
+              }}
+            >
+              {trustedPartners.map((partner, index) => (
+                <TrustedPartnerCard key={`about-set1-${index}`} partner={partner} />
+              ))}
+              {trustedPartners.map((partner, index) => (
+                <TrustedPartnerCard key={`about-set2-${index}`} partner={partner} />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
+
+      <style>{`
+        @keyframes about-scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      `}</style>
     </section>
   );
 };

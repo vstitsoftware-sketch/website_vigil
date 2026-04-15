@@ -1,5 +1,26 @@
 import { Star, Quote } from "lucide-react";
 
+const collaborations = [
+  { name: "Samsung", logo: "/collaborators/samsung.webp" },
+  { name: "Bosch", logo: "/collaborators/bosch.jpg" },
+  { name: "Honeywell", logo: "/collaborators/honeywell.webp" },
+  { name: "Dahua", logo: "/collaborators/dahua.jpg" },
+  { name: "Hikvision", logo: "/collaborators/hikvision.webp" },
+  { name: "GST", logo: "/collaborators/GST.jpg" },
+  { name: "Johnson Controls", logo: "/collaborators/Johnson.webp" },
+  { name: "HID", logo: "/collaborators/hid.webp" },
+  { name: "Texecom", logo: "/collaborators/Texecom_logo.jpg" },
+  { name: "Agni", logo: "/collaborators/agni.png" },
+  { name: "eSSL", logo: "/collaborators/essl.jpg" },
+  { name: "Matrix", logo: "/collaborators/matrix.png" },
+  { name: "Securus", logo: "/collaborators/securus.png" },
+  { name: "Wisenet", logo: "/collaborators/wisenet.jpg" },
+  { name: "eGlu", logo: "/collaborators/eglu.png" },
+  { name: "LivFuture", logo: "/collaborators/livfuture.webp" },
+  { name: "Godrej", logo: "/collaborators/godrej.jpg" },
+  { name: "Optex", logo: "/collaborators/optex.png" },
+];
+
 const testimonials = [
   {
     name: "Sarah Chen",
@@ -77,20 +98,58 @@ const TestimonialsSection = () => {
           ))}
         </div>
 
-        {/* Logos Section */}
+        {/* Collaborators Section */}
         <div className="mt-20 pt-16 border-t border-border">
-          <p className="text-center text-muted-foreground mb-8">
-            Trusted by leading companies worldwide
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-12 opacity-50">
-            {["TechCorp", "GlobalBank", "InnovateCo", "FutureGen", "DataPrime"].map((company) => (
-              <div key={company} className="text-2xl font-serif font-bold text-muted-foreground">
-                {company}
-              </div>
-            ))}
+          <h3 className="text-2xl font-bold text-center mb-8 text-foreground/80">Our Clients</h3>
+          <div
+            className="relative w-full overflow-hidden"
+            style={{
+              maskImage: "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
+              WebkitMaskImage: "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
+            }}
+          >
+            <div
+              className="flex gap-6 py-4"
+              style={{
+                animation: `testimonials-scroll-reverse ${collaborations.length * 5}s linear infinite`,
+                width: "max-content",
+              }}
+            >
+              {[...collaborations, ...collaborations, ...collaborations].map((collab, index) => (
+                <div
+                  key={`collab-a-${index}`}
+                  className="flex flex-col items-center justify-center p-6 bg-background rounded-xl shadow-sm border border-border/50 hover:shadow-md hover:border-accent/50 transition-all group flex-shrink-0"
+                  style={{ width: "200px" }}
+                >
+                  <div className="w-24 h-24 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform overflow-hidden">
+                    <img src={collab.logo} alt={collab.name} className="w-full h-full object-contain" />
+                  </div>
+                  <h4 className="font-semibold text-foreground text-center">{collab.name}</h4>
+                </div>
+              ))}
+              {[...collaborations, ...collaborations, ...collaborations].map((collab, index) => (
+                <div
+                  key={`collab-b-${index}`}
+                  className="flex flex-col items-center justify-center p-6 bg-background rounded-xl shadow-sm border border-border/50 hover:shadow-md hover:border-accent/50 transition-all group flex-shrink-0"
+                  style={{ width: "200px" }}
+                >
+                  <div className="w-24 h-24 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform overflow-hidden">
+                    <img src={collab.logo} alt={collab.name} className="w-full h-full object-contain" />
+                  </div>
+                  <h4 className="font-semibold text-foreground text-center">{collab.name}</h4>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes testimonials-scroll-reverse {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
+      `}</style>
     </section>
   );
 };

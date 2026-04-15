@@ -22,6 +22,11 @@ export interface JobApplication {
 }
 
 export const uploadResume = async (file: File): Promise<string | null> => {
+    if (!supabase) {
+        console.warn("Supabase is not configured. Resume upload is disabled.");
+        return null;
+    }
+
     try {
         const fileExt = file.name.split('.').pop();
         const fileName = `${Date.now()}_${Math.random().toString(36).substring(2)}.${fileExt}`;
@@ -49,6 +54,11 @@ export const uploadResume = async (file: File): Promise<string | null> => {
 };
 
 export const getJobs = async () => {
+    if (!supabase) {
+        console.warn("Supabase is not configured. Returning empty jobs list.");
+        return [];
+    }
+
     const { data, error } = await supabase
         .from('jobs')
         .select('*')
@@ -63,6 +73,10 @@ export const getJobs = async () => {
 };
 
 export const getJobById = async (id: string) => {
+    if (!supabase) {
+        throw new Error("Supabase is not configured.");
+    }
+
     const { data, error } = await supabase
         .from('jobs')
         .select('*')
@@ -74,6 +88,10 @@ export const getJobById = async (id: string) => {
 };
 
 export const submitJobApplication = async (application: JobApplication) => {
+    if (!supabase) {
+        throw new Error("Supabase is not configured.");
+    }
+
     // Clean up the payload: remove resume_url if it's null/undefined
     const payload: Record<string, unknown> = {
         job_id: application.job_id,
@@ -93,6 +111,24 @@ export const submitJobApplication = async (application: JobApplication) => {
     const { error } = await supabase
         .from('job_applications')
         .insert([payload]);
+
+    if (error && application.resume_url) {
+        // Handle schema variant where resume_file_path exists instead of resume_url.
+        const fallbackPayload: Record<string, unknown> = { ...payload };
+        delete fallbackPayload.resume_url;
+        fallbackPayload.resume_file_path = application.resume_url;
+
+        const { error: fallbackError } = await supabase
+            .from('job_applications')
+            .insert([fallbackPayload]);
+
+        if (fallbackError) {
+            console.error("Supabase insert error:", fallbackError);
+            throw fallbackError;
+        }
+
+        return true;
+    }
 
     if (error) {
         console.error("Supabase insert error:", error);
@@ -120,7 +156,43 @@ export interface JobApplicationWithDetails {
     } | null;
 }
 
+type JobApplicationRow = {
+    id: string;
+    job_id: string;
+    full_name: string;
+    email: string;
+    phone: string;
+    cover_letter?: string | null;
+    resume_url?: string | null;
+    resume_file_path?: string | null;
+    created_at?: string;
+    submitted_at?: string;
+    jobs?: {
+        title: string;
+        department: string;
+        location: string;
+        type: string;
+    } | null;
+};
+
+const normalizeApplicationRow = (row: JobApplicationRow): JobApplicationWithDetails => ({
+    id: row.id,
+    job_id: row.job_id,
+    full_name: row.full_name,
+    email: row.email,
+    phone: row.phone,
+    cover_letter: row.cover_letter ?? null,
+    resume_url: row.resume_url ?? row.resume_file_path ?? null,
+    created_at: row.created_at ?? row.submitted_at ?? new Date(0).toISOString(),
+    jobs: row.jobs ?? null,
+});
+
 export const getJobApplications = async (): Promise<JobApplicationWithDetails[]> => {
+    if (!supabase) {
+        console.warn("Supabase is not configured. Returning empty applications list.");
+        return [];
+    }
+
     const { data, error } = await supabase
         .from('job_applications')
         .select(`
@@ -132,7 +204,7 @@ export const getJobApplications = async (): Promise<JobApplicationWithDetails[]>
                 type
             )
         `)
-        .order('created_at', { ascending: false });
+        .order('created_at', { ascending: false, nullsFirst: false });
 
     if (error) {
         console.error("Error fetching applications:", error);
@@ -140,19 +212,25 @@ export const getJobApplications = async (): Promise<JobApplicationWithDetails[]>
         const { data: rawData, error: rawError } = await supabase
             .from('job_applications')
             .select('*')
-            .order('created_at', { ascending: false });
+            .order('created_at', { ascending: false, nullsFirst: false });
 
         if (rawError) {
-            console.error("Error fetching raw applications:", rawError);
-            return [];
+            const { data: submittedAtData, error: submittedAtError } = await supabase
+                .from('job_applications')
+                .select('*')
+                .order('submitted_at', { ascending: false, nullsFirst: false });
+
+            if (submittedAtError) {
+                console.error("Error fetching raw applications:", submittedAtError);
+                return [];
+            }
+
+            return (submittedAtData || []).map((app) => normalizeApplicationRow(app as JobApplicationRow));
         }
 
-        return (rawData || []).map((app: Record<string, unknown>) => ({
-            ...app,
-            jobs: null,
-        })) as JobApplicationWithDetails[];
+        return (rawData || []).map((app) => normalizeApplicationRow(app as JobApplicationRow));
     }
 
-    return (data || []) as JobApplicationWithDetails[];
+    return (data || []).map((app) => normalizeApplicationRow(app as JobApplicationRow));
 };
 

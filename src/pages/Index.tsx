@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
-import ClientsSection from "@/components/ClientsSection";
 import ServicesSection from "@/components/ServicesSection";
 import ProductsSection from "@/components/ProductsSection";
 import SalesSection from "@/components/SalesSection";
@@ -29,7 +28,6 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <AboutSection />
-      <ClientsSection />
       <ServicesSection />
       <ProductsSection />
       <SalesSection />

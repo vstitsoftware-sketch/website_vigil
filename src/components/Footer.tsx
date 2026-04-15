@@ -42,7 +42,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <a href="#" className="block">
-              <img src="/Vigil.png" alt="Vigil Everywhere" className="h-32 w-auto" />
+              <img src="/Vigil.png" alt="Vigil Everywhere" className="h-44 w-auto" />
             </a>
             <p className="text-primary-foreground/70 mt-4 mb-6 max-w-sm">
               Empowering businesses with innovative solutions and strategic
