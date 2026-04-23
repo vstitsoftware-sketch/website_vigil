@@ -100,7 +100,7 @@ const TestimonialsSection = () => {
 
         {/* Collaborators Section */}
         <div className="mt-20 pt-16 border-t border-border">
-          <h3 className="text-2xl font-bold text-center mb-8 text-foreground/80">Our Clients</h3>
+          <h3 className="text-2xl font-bold text-center mb-8 text-foreground/80">Brands we Integrate</h3>
           <div
             className="relative w-full overflow-hidden"
             style={{

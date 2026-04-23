@@ -10,7 +10,7 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    company: "",
+    subject: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -22,7 +22,7 @@ const ContactSection = () => {
     try {
       await submitContactForm(formData);
       toast.success("Thank you for your message! We'll be in touch soon.");
-      setFormData({ name: "", email: "", company: "", message: "" });
+      setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
       console.error("Error submitting form:", error);
       toast.error("Something went wrong. Please try again later.");
@@ -131,16 +131,16 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Company Name
-                </label>
-                <Input
-                  placeholder="Your Company Name"
-                  value={formData.company}
-                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                />
-              </div>
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-2">
+                    Subject
+                  </label>
+                  <Input
+                    placeholder="Subject of your enquiry"
+                    value={formData.subject}
+                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                  />
+                </div>
 
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">

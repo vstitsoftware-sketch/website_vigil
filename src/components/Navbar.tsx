@@ -15,11 +15,17 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[#b4966e]/30 bg-white/70 shadow-[0_10px_24px_rgba(70,48,24,0.12)] backdrop-blur-md">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-24">
-          <a href="#" className="flex items-center gap-2">
-            <img src="/Vigil.png" alt="Vigil" className="h-20 w-auto" />
+        <div className="flex items-center justify-between h-20">
+          <a href="#" className="flex items-center gap-2 shrink-0">
+            <span className="flex h-14 md:h-16 w-[170px] md:w-[190px] items-center overflow-hidden">
+              <img
+                src="/Logo-01 (1).png"
+                alt="Vigil"
+                className="h-full w-auto max-w-none origin-left scale-[1.04] -translate-x-1 md:-translate-x-2"
+              />
+            </span>
           </a>
 
           {/* Desktop Navigation */}
@@ -28,7 +34,7 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
+                className="text-sm font-medium text-[#5a472f]/90 hover:text-[#2a2218] transition-colors duration-200"
               >
                 {link.name}
               </a>
@@ -56,7 +62,7 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200 py-2"
+                  className="text-sm font-medium text-[#5a472f]/90 hover:text-[#2a2218] transition-colors duration-200 py-2"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
