@@ -1,73 +1,60 @@
-# Welcome to your Lovable project
+# Project Overview
 
-## Project info
+This repository contains a single-page React application built with Vite, TypeScript, Tailwind CSS, and shadcn/ui components. The app uses React Router for client-side routing, React Query for server-state management, and Supabase and EmailJS integrations for data and form workflows.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Tech Stack
 
-## How can I edit this code?
+- Vite
+- React 18
+- TypeScript
+- React Router
+- TanStack Query
+- Tailwind CSS
+- shadcn/ui
+- Supabase
+- EmailJS
 
-There are several ways of editing your application.
+## Project Structure
 
-**Use Lovable**
+- `src/main.tsx` bootstraps the React app and mounts it to `#root`.
+- `src/App.tsx` defines the router, global providers, and application routes.
+- `src/pages/` contains page-level views such as the home page, careers pages, service pages, and error handling.
+- `src/components/` contains shared UI sections, layout components, and reusable primitives.
+- `src/services/` contains API and data-access helpers.
+- `src/lib/` contains shared utility modules and client setup code.
+- `public/` stores static assets served directly by Vite.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Routes
 
-Changes made via Lovable will be committed automatically to this repo.
+The application includes routes for:
 
-**Use your preferred IDE**
+- the home page
+- multiple service detail pages
+- careers listings and job detail pages
+- an HR portal
+- a catch-all not-found page
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Local Development
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Install dependencies and start the Vite dev server:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Available Scripts
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- `npm run dev` - start the development server
+- `npm run build` - build the production bundle
+- `npm run build:dev` - build using the development mode configuration
+- `npm run preview` - preview the production build locally
+- `npm run lint` - run ESLint across the project
+- `npm run test` - run the Vitest test suite once
+- `npm run test:watch` - run the Vitest test suite in watch mode
 
-**Use GitHub Codespaces**
+## Notes
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- The Vite config sets up the `@` import alias to point at `src/`.
+- The app uses a class-based dark mode configuration in Tailwind.
+- Static and route-driven assets are organized to support a content-heavy frontend.
