@@ -17,11 +17,11 @@ const TimeAttendance = () => {
               <Clock className="h-8 w-8" />
             </div>
             <div>
-              <h1 className="font-serif text-4xl md:text-5xl font-bold">Time Attendance & Payroll Solutions</h1>
+              <h1 className="font-serif text-4xl md:text-5xl font-bold">Time Attendance and Payroll Solutions</h1>
             </div>
           </div>
           <p className="text-primary-foreground/90 text-lg max-w-3xl">
-            Streamlined workforce management and automated payroll processing.
+            Simple and reliable systems to track attendance, manage payroll, and reduce manual HR work.
           </p>
         </div>
       </div>
@@ -34,26 +34,26 @@ const TimeAttendance = () => {
             <div className="bg-card rounded-2xl p-8 shadow-soft mb-8">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Overview</h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                Our time attendance and payroll solutions provide comprehensive workforce management tools that streamline HR operations and ensure accurate compensation. We combine biometric time tracking with intelligent payroll processing to eliminate manual errors and save valuable administrative time.
+                Our time attendance and payroll solutions help you manage your workforce more efficiently by combining accurate attendance tracking with automated payroll processing. Using biometric systems and smart software, you can reduce manual errors and avoid time-consuming calculations.
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+                We cover everything from daily attendance tracking to salary processing, deductions, and compliance reporting. The system is designed to handle routine HR tasks so your team can focus on more important work.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                From attendance tracking to payroll generation and compliance reporting, our solutions handle all aspects of workforce management efficiently.
+                With real-time data and easy access to reports, you always have a clear view of employee attendance, working hours, and payroll details.
               </p>
             </div>
 
-            {/* Key Features */}
+            {/* Key Components */}
             <div className="bg-card rounded-2xl p-8 shadow-soft">
-              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Features & Capabilities</h2>
+              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Key Components</h2>
               <div className="space-y-4">
                 {[
-                  "Biometric time tracking (fingerprint, facial recognition)",
-                  "Real-time attendance monitoring",
-                  "Automated payroll calculation",
-                  "Deduction and allowance management",
-                  "Compliance with labor regulations",
-                  "Mobile app for employee access",
-                  "Detailed reporting and analytics",
-                  "Integration with accounting systems"
+                  "Biometric Time Attendance Systems",
+                  "Real-Time Attendance Monitoring",
+                  "Automated Payroll Processing",
+                  "Deduction and Allowance Management",
+                  "Reporting and Analytics Dashboard"
                 ].map((feature) => (
                   <div key={feature} className="flex items-start gap-4">
                     <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
@@ -66,20 +66,20 @@ const TimeAttendance = () => {
 
           {/* Sidebar */}
           <div>
-            <div className="bg-accent/10 rounded-2xl p-8 sticky top-20">
-              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Key Benefits</h3>
+            <div className="bg-accent/10 rounded-2xl p-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Industries We Serve</h3>
               <ul className="space-y-3 mb-8">
                 {[
-                  "Eliminate Time Theft",
-                  "Reduce Admin Work",
-                  "Improve Accuracy",
-                  "Faster Payroll",
-                  "Employee Transparency",
-                  "Compliance Ready"
-                ].map((benefit) => (
-                  <li key={benefit} className="flex items-center gap-2">
+                  "Manufacturing and Factories",
+                  "Offices and Corporate Companies",
+                  "Hospitals and Healthcare",
+                  "Retail and Showrooms",
+                  "Educational Institutions",
+                  "Warehouses and Logistics"
+                ].map((industry) => (
+                  <li key={industry} className="flex items-center gap-2">
                     <div className="h-2 w-2 bg-accent rounded-full" />
-                    <span className="text-foreground">{benefit}</span>
+                    <span className="text-foreground">{industry}</span>
                   </li>
                 ))}
               </ul>
@@ -90,6 +90,24 @@ const TimeAttendance = () => {
                 </Button>
               </Link>
             </div>
+
+            {/* Standards and Compliances */}
+            <div className="bg-accent/10 rounded-2xl p-8 mt-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Standards and Compliances</h3>
+              <ul className="space-y-3">
+                {[
+                  "Labor Law Compliance (India)",
+                  "Minimum Wages and Payroll Regulations",
+                  "PF and ESI Compliance",
+                  "Data Security and Privacy Standards"
+                ].map((standard) => (
+                  <li key={standard} className="flex items-start gap-2">
+                    <div className="h-2 w-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                    <span className="text-foreground">{standard}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -98,18 +116,18 @@ const TimeAttendance = () => {
           {[
             {
               icon: Users,
-              title: "Employee Management",
-              description: "Streamline HR operations with comprehensive workforce management"
+              title: "Accurate Tracking",
+              description: "Eliminate manual errors with biometric attendance and automated records."
             },
             {
               icon: Zap,
-              title: "Fast Payroll",
-              description: "Process payroll automatically with no manual calculations"
+              title: "Time Saving",
+              description: "Reduce HR workload with automated payroll and attendance management."
             },
             {
               icon: BarChart,
-              title: "Data Insights",
-              description: "Gain visibility into attendance patterns and workforce productivity"
+              title: "Better Compliance",
+              description: "Stay aligned with labor laws and avoid issues with accurate and structured records."
             }
           ].map((benefit) => (
             <div key={benefit.title} className="bg-card rounded-2xl p-8 shadow-soft">
@@ -124,13 +142,13 @@ const TimeAttendance = () => {
 
         {/* CTA Section */}
         <div className="bg-accent/10 rounded-2xl p-12 text-center">
-          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Streamline Your Payroll Today</h2>
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Simplify Your Workforce Management</h2>
           <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-            Implement our time attendance and payroll solution to save time and improve accuracy.
+            Manage attendance and payroll in a smarter and more reliable way.
           </p>
           <Link to="/#contact">
             <Button variant="accent" size="lg">
-              Schedule Demo
+              Schedule Consultation
             </Button>
           </Link>
         </div>

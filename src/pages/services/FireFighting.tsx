@@ -21,7 +21,7 @@ const FireFighting = () => {
             </div>
           </div>
           <p className="text-primary-foreground/90 text-lg max-w-3xl">
-            Comprehensive fire safety and suppression systems designed to protect lives and assets.
+            End-to-end fire protection solutions—from early detection and alarm systems to advanced suppression—engineered to safeguard lives, assets, and operations while meeting stringent safety standards.
           </p>
         </div>
       </div>
@@ -34,26 +34,26 @@ const FireFighting = () => {
             <div className="bg-card rounded-2xl p-8 shadow-soft mb-8">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Overview</h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                Our fire fighting systems provide complete fire safety solutions, from detection and alarm to active suppression. We design, install, and maintain comprehensive fire protection systems tailored to your facility's specific needs and regulatory requirements.
+                Our fire fighting systems deliver comprehensive protection by integrating detection, alarm, and suppression technologies into a unified safety framework. Each system is carefully engineered based on your facility's layout, risk profile, and operational requirements, ensuring rapid response in the event of a fire incident.
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+                We provide complete lifecycle support—including design, installation, testing, and maintenance—ensuring your fire protection infrastructure remains reliable and compliant at all times. Our solutions are built to minimize downtime, reduce property damage, and most importantly, protect human life.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Our systems comply with international fire safety standards and are designed to minimize property damage while maximizing life safety.
+                All systems are designed in accordance with recognized international and local fire safety standards, ensuring regulatory compliance and long-term operational resilience.
               </p>
             </div>
 
-            {/* Key Features */}
+            {/* Key Components */}
             <div className="bg-card rounded-2xl p-8 shadow-soft">
-              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">System Components</h2>
+              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Key Components</h2>
               <div className="space-y-4">
                 {[
-                  "Fire detection systems (smoke, heat, flame)",
-                  "Automatic fire alarm and alert systems",
-                  "Sprinkler systems (dry, wet, pre-action)",
-                  "Foam suppression systems",
-                  "Gas suppression systems",
-                  "Emergency evacuation systems",
-                  "Fire safety signage and guidance",
-                  "Regular maintenance and inspection services"
+                  "Fire Detection Systems (Smoke, Heat, and Flame Detectors)",
+                  "Fire Alarm & Notification Systems (Audible and Visual Alerts)",
+                  "Automatic Sprinkler Systems",
+                  "Hydrant & Hose Reel Systems",
+                  "Fire Suppression Systems (Gas-based, Foam, or Water Mist)"
                 ].map((feature) => (
                   <div key={feature} className="flex items-start gap-4">
                     <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
@@ -66,20 +66,20 @@ const FireFighting = () => {
 
           {/* Sidebar */}
           <div>
-            <div className="bg-accent/10 rounded-2xl p-8 sticky top-20">
-              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Standards & Compliance</h3>
+            <div className="bg-accent/10 rounded-2xl p-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Industries We Serve</h3>
               <ul className="space-y-3 mb-8">
                 {[
-                  "NFPA Standards",
-                  "ISO Fire Safety Codes",
-                  "Local Building Codes",
-                  "International Standards",
-                  "Regular Inspections",
-                  "Certification & Testing"
-                ].map((standard) => (
-                  <li key={standard} className="flex items-center gap-2">
+                  "Manufacturing & Industrial Facilities",
+                  "Commercial Buildings & Offices",
+                  "Warehouses & Logistics Hubs",
+                  "Hospitals & Healthcare Facilities",
+                  "Educational Institutions",
+                  "Retail & Shopping Complexes"
+                ].map((industry) => (
+                  <li key={industry} className="flex items-center gap-2">
                     <div className="h-2 w-2 bg-accent rounded-full" />
-                    <span className="text-foreground">{standard}</span>
+                    <span className="text-foreground">{industry}</span>
                   </li>
                 ))}
               </ul>
@@ -90,6 +90,24 @@ const FireFighting = () => {
                 </Button>
               </Link>
             </div>
+
+            {/* Standards and Compliances */}
+            <div className="bg-accent/10 rounded-2xl p-8 mt-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Standards and Compliances</h3>
+              <ul className="space-y-3">
+                {[
+                  "NFPA (National Fire Protection Association) Standards",
+                  "NBC (National Building Code of India)",
+                  "IS Codes (Bureau of Indian Standards)",
+                  "Local Fire Authority Regulations"
+                ].map((standard) => (
+                  <li key={standard} className="flex items-start gap-2">
+                    <div className="h-2 w-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                    <span className="text-foreground">{standard}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -98,18 +116,18 @@ const FireFighting = () => {
           {[
             {
               icon: AlertTriangle,
-              title: "Early Detection",
-              description: "Detect fires at the earliest stages for quick response and containment"
+              title: "Rapid Fire Detection",
+              description: "Early warning systems detect fire hazards instantly, enabling faster response times and reducing the risk of escalation."
             },
             {
               icon: Shield,
-              title: "Life Safety",
-              description: "Protect occupants with fast alerts and safe evacuation routes"
+              title: "Comprehensive Protection",
+              description: "Integrated detection and suppression systems ensure complete coverage, minimizing damage to property and infrastructure."
             },
             {
               icon: Activity,
-              title: "Asset Protection",
-              description: "Minimize property damage with rapid suppression systems"
+              title: "Regulatory Compliance",
+              description: "Systems designed to meet national and international standards help you stay compliant and audit-ready at all times."
             }
           ].map((benefit) => (
             <div key={benefit.title} className="bg-card rounded-2xl p-8 shadow-soft">
@@ -124,13 +142,13 @@ const FireFighting = () => {
 
         {/* CTA Section */}
         <div className="bg-accent/10 rounded-2xl p-12 text-center">
-          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Protect Your Facility with Advanced Fire Systems</h2>
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Ensure Complete Fire Safety for Your Facility</h2>
           <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-            Contact our fire safety experts for a comprehensive assessment and customized fire protection plan.
+            Protect your people, property, and operations with a fully compliant fire fighting system tailored to your needs.
           </p>
           <Link to="/#contact">
             <Button variant="accent" size="lg">
-              Schedule Assessment
+              Schedule Consultation
             </Button>
           </Link>
         </div>

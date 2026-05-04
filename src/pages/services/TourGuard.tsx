@@ -21,7 +21,7 @@ const TourGuard = () => {
             </div>
           </div>
           <p className="text-primary-foreground/90 text-lg max-w-3xl">
-            Automated patrol monitoring and verification system for security personnel.
+            Automated patrol monitoring to track guard activity and ensure every checkpoint is covered.
           </p>
         </div>
       </div>
@@ -34,26 +34,26 @@ const TourGuard = () => {
             <div className="bg-card rounded-2xl p-8 shadow-soft mb-8">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Overview</h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                Our Tour Guard System automates security patrol monitoring and verification. It ensures that security personnel complete their rounds on schedule and visit all required checkpoints, providing management with real-time visibility into security operations.
+                Our Tour Guard System helps you monitor and verify security patrols without relying on manual logs. Guards follow predefined routes and scan checkpoints using handheld devices or mobile apps, making it easy to confirm that every round is completed properly.
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+                The system gives you real-time visibility into guard movements, missed checkpoints, and delays. This improves accountability and helps supervisors take quick action if something is not followed as planned.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Replace manual patrol logs with intelligent, automated monitoring that verifies personnel presence and accountability at every location.
+                It is especially useful for large facilities where regular patrols are critical for safety and security.
               </p>
             </div>
 
             {/* Key Features */}
             <div className="bg-card rounded-2xl p-8 shadow-soft">
-              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">System Features</h2>
+              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Key Components</h2>
               <div className="space-y-4">
                 {[
-                  "Automated patrol checkpoints",
-                  "Real-time presence verification",
-                  "Scheduled route management",
-                  "Guard identification tracking",
-                  "Incident documentation",
-                  "Detailed patrol reports",
-                  "Mobile checkpoint readers",
-                  "Management dashboard"
+                  "Patrol Checkpoint Tags or Sensors",
+                  "Handheld or Mobile Checkpoint Readers",
+                  "Scheduled Patrol Route Management",
+                  "Guard Identification and Tracking",
+                  "Reporting and Monitoring Dashboard"
                 ].map((feature) => (
                   <div key={feature} className="flex items-start gap-4">
                     <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
@@ -66,16 +66,16 @@ const TourGuard = () => {
 
           {/* Sidebar */}
           <div>
-            <div className="bg-accent/10 rounded-2xl p-8 sticky top-20">
-              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Applications</h3>
+            <div className="bg-accent/10 rounded-2xl p-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Industries We Serve</h3>
               <ul className="space-y-3 mb-8">
                 {[
-                  "Building Security",
-                  "Facility Patrol",
-                  "Campus Monitoring",
-                  "Industrial Sites",
-                  "Multi-location Chains",
-                  "Real Estate"
+                  "Industrial and Manufacturing Units",
+                  "Commercial Buildings and Offices",
+                  "Warehouses and Logistics",
+                  "Hospitals and Healthcare Facilities",
+                  "Residential Complexes",
+                  "Shopping Malls and Retail Spaces"
                 ].map((app) => (
                   <li key={app} className="flex items-center gap-2">
                     <div className="h-2 w-2 bg-accent rounded-full" />
@@ -90,6 +90,24 @@ const TourGuard = () => {
                 </Button>
               </Link>
             </div>
+
+            {/* Standards and Compliances */}
+            <div className="bg-accent/10 rounded-2xl p-8 mt-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Standards and Compliances</h3>
+              <ul className="space-y-3">
+                {[
+                  "Security Operations Guidelines",
+                  "Workplace Safety Regulations",
+                  "Data Logging and Reporting Standards",
+                  "Facility Management Compliance"
+                ].map((standard) => (
+                  <li key={standard} className="flex items-start gap-2">
+                    <div className="h-2 w-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                    <span className="text-foreground">{standard}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -98,18 +116,18 @@ const TourGuard = () => {
           {[
             {
               icon: Users,
-              title: "Guard Accountability",
-              description: "Verify that guards complete assigned patrols and visit checkpoints"
+              title: "Better Accountability",
+              description: "Make sure guards complete their rounds and follow assigned routes properly."
             },
             {
               icon: MapIcon,
-              title: "Route Verification",
-              description: "Ensure all critical areas are monitored and checked regularly"
+              title: "Real-Time Tracking",
+              description: "Monitor patrol activity instantly and identify missed checkpoints or delays."
             },
             {
               icon: BarChart,
-              title: "Performance Data",
-              description: "Track patrol completion rates and security coverage metrics"
+              title: "Accurate Records",
+              description: "Maintain clear and reliable patrol reports without manual paperwork."
             }
           ].map((benefit) => (
             <div key={benefit.title} className="bg-card rounded-2xl p-8 shadow-soft">
@@ -124,13 +142,13 @@ const TourGuard = () => {
 
         {/* CTA Section */}
         <div className="bg-accent/10 rounded-2xl p-12 text-center">
-          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Automate Your Patrol Monitoring</h2>
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Improve Your Security Patrol System</h2>
           <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-            Implement our Tour Guard System to ensure security excellence and guard accountability.
+            Track and manage guard activity more effectively with an automated tour guard system.
           </p>
           <Link to="/#contact">
             <Button variant="accent" size="lg">
-              Schedule Demo
+              Schedule Consultation
             </Button>
           </Link>
         </div>

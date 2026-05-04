@@ -17,11 +17,11 @@ const CommercialDisplays = () => {
               <Tv className="h-8 w-8" />
             </div>
             <div>
-              <h1 className="font-serif text-4xl md:text-5xl font-bold">Commercial Display & Signages</h1>
+              <h1 className="font-serif text-4xl md:text-5xl font-bold">Commercial Display and Signages</h1>
             </div>
           </div>
           <p className="text-primary-foreground/90 text-lg max-w-3xl">
-            Eye-catching digital displays and signage solutions for retail and corporate environments.
+            Digital display solutions that help you present information clearly and attract attention in any space.
           </p>
         </div>
       </div>
@@ -34,26 +34,26 @@ const CommercialDisplays = () => {
             <div className="bg-card rounded-2xl p-8 shadow-soft mb-8">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Overview</h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                Our commercial display and signage solutions transform spaces with dynamic, eye-catching visuals. We provide cutting-edge digital display technology that captivates audiences and delivers your message with impact.
+                Our commercial display and signage solutions help businesses communicate better using clear and engaging visual content. Whether you want to promote products, share information, or improve customer experience, digital displays make your messaging more effective.
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+                We provide a range of display options based on your space and usage. This includes indoor screens for offices and retail stores, as well as outdoor signages that can handle different weather conditions. Each setup is planned to ensure good visibility, easy control, and long-term reliability.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                From retail stores and shopping centers to corporate offices and entertainment venues, our displays are designed to engage, inform, and inspire.
+                With simple content management tools, you can update and control what is displayed at any time, without depending on manual changes or printed materials.
               </p>
             </div>
 
-            {/* Key Features */}
+            {/* Key Components */}
             <div className="bg-card rounded-2xl p-8 shadow-soft">
-              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Display Solutions</h2>
+              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Key Components</h2>
               <div className="space-y-4">
                 {[
-                  "Ultra high-definition LED displays",
-                  "Interactive touchscreen systems",
-                  "Video walls and large format displays",
-                  "Outdoor weatherproof signages",
-                  "Digital menu boards",
-                  "Content management systems",
-                  "Real-time information displays",
-                  "Customizable design and branding"
+                  "LED and Ultra HD Display Screens",
+                  "Interactive Touchscreen Displays",
+                  "Video Walls and Large Format Displays",
+                  "Outdoor and Weatherproof Signages",
+                  "Content Management System (CMS)"
                 ].map((feature) => (
                   <div key={feature} className="flex items-start gap-4">
                     <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
@@ -66,16 +66,16 @@ const CommercialDisplays = () => {
 
           {/* Sidebar */}
           <div>
-            <div className="bg-accent/10 rounded-2xl p-8 sticky top-20">
-              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Use Cases</h3>
+            <div className="bg-accent/10 rounded-2xl p-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Industries We Serve</h3>
               <ul className="space-y-3 mb-8">
                 {[
-                  "Retail Stores",
+                  "Retail Stores and Showrooms",
                   "Shopping Malls",
-                  "Restaurants & Cafes",
-                  "Airports & Stations",
-                  "Corporate Lobbies",
-                  "Event Venues"
+                  "Corporate Offices",
+                  "Hotels and Hospitality",
+                  "Hospitals and Clinics",
+                  "Entertainment and Event Spaces"
                 ].map((useCase) => (
                   <li key={useCase} className="flex items-center gap-2">
                     <div className="h-2 w-2 bg-accent rounded-full" />
@@ -90,6 +90,24 @@ const CommercialDisplays = () => {
                 </Button>
               </Link>
             </div>
+
+            {/* Standards and Compliances */}
+            <div className="bg-accent/10 rounded-2xl p-8 mt-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Standards and Compliances</h3>
+              <ul className="space-y-3">
+                {[
+                  "BIS and Electrical Safety Standards",
+                  "Energy Efficiency Guidelines",
+                  "Display and Installation Safety Norms",
+                  "Local Signage and Advertising Regulations"
+                ].map((standard) => (
+                  <li key={standard} className="flex items-start gap-2">
+                    <div className="h-2 w-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                    <span className="text-foreground">{standard}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -98,18 +116,18 @@ const CommercialDisplays = () => {
           {[
             {
               icon: Eye,
-              title: "Attract Attention",
-              description: "Capture audience attention with vibrant, dynamic visual content"
-            },
-            {
-              icon: TrendingUp,
-              title: "Boost Sales",
-              description: "Increase customer engagement and drive sales with compelling displays"
+              title: "Better Visibility",
+              description: "Display content clearly and attract attention in high-traffic areas."
             },
             {
               icon: Zap,
-              title: "Flexible Content",
-              description: "Easily update content and messaging across multiple displays"
+              title: "Easy Content Updates",
+              description: "Change and manage content anytime using simple digital tools."
+            },
+            {
+              icon: TrendingUp,
+              title: "Stronger Engagement",
+              description: "Use visuals and interactive displays to connect better with your audience."
             }
           ].map((benefit) => (
             <div key={benefit.title} className="bg-card rounded-2xl p-8 shadow-soft">

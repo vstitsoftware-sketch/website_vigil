@@ -46,92 +46,46 @@ const heroSlides: HeroSlide[] = [
   },
 ];
 
-const HeroCopyDesktop = () => (
+const HeroCopy = () => (
   <div className="max-w-4xl mx-auto text-center text-[#2a2218]">
-    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 lg:mb-8 animate-fade-up bg-white/55 border border-[#b4966e]/25">
+    <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full mb-4 sm:mb-8 animate-fade-up bg-white/55 border border-[#b4966e]/25">
       <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-      <span className="text-sm text-[#463726]">Trusted by 500+ companies worldwide</span>
+      <span className="text-xs sm:text-sm text-[#463726]">Trusted by 500+ companies worldwide</span>
     </div>
 
-    <img
-      src="/Logo-01 (1).png"
-      alt="Vigil logo"
-      className="h-20 md:h-28 lg:h-40 w-auto mx-auto mb-4 lg:mb-8 animate-fade-up"
-      style={{ animationDelay: "0.05s" }}
-    />
-
-    <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl font-black tracking-tight text-[#2a2218] mb-4 lg:mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+    <h1 className="font-serif text-3xl sm:text-5xl md:text-7xl font-black tracking-tight text-[#2a2218] mb-3 sm:mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
       &ldquo;Empowering Your <span className="text-gradient">Business Growth</span>&rdquo;
     </h1>
 
-    <p className="text-base md:text-xl text-[#463726]/80 mb-6 lg:mb-10 max-w-2xl mx-auto animate-fade-up px-2 sm:px-0" style={{ animationDelay: "0.2s" }}>
+    <p className="text-sm sm:text-base md:text-xl text-[#463726]/80 mb-6 sm:mb-10 max-w-2xl mx-auto animate-fade-up px-2 sm:px-0" style={{ animationDelay: "0.2s" }}>
       Vigil Safety Technologies delivers innovative solutions that transform the way you work.
       We combine cutting-edge technology with strategic expertise to drive measurable results.
     </p>
 
-    <div className="flex flex-row gap-3 md:gap-4 justify-center animate-fade-up px-2 sm:px-0" style={{ animationDelay: "0.3s" }}>
-      <Button variant="hero" size="lg" className="text-sm md:text-base">
+    <div className="flex flex-col gap-2 sm:gap-4 sm:flex-row justify-center animate-fade-up px-2 sm:px-0" style={{ animationDelay: "0.3s" }}>
+      <Button variant="hero" size="sm" className="text-xs sm:text-sm">
         Start Your Journey
-        <ArrowRight className="ml-2 h-5 w-5" />
+        <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
       </Button>
-      <Button variant="heroOutline" size="lg" className="text-sm md:text-base">
-        <Play className="mr-2 h-5 w-5" />
+      <Button variant="heroOutline" size="sm" className="text-xs sm:text-sm">
+        <Play className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
         Watch Demo
       </Button>
     </div>
 
-    <div className="flex flex-row flex-wrap items-center justify-center gap-x-10 gap-y-4 mt-6 lg:mt-8 pt-4 border-t border-[#b4966e]/30 animate-fade-up px-2 sm:px-0" style={{ animationDelay: "0.4s" }}>
+    <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-3 sm:gap-x-10 sm:gap-y-4 mt-8 sm:mt-20 pt-6 sm:pt-10 border-t border-[#b4966e]/30 animate-fade-up px-2 sm:px-0" style={{ animationDelay: "0.4s" }}>
       <div className="flex items-baseline gap-2">
-        <div className="text-2xl lg:text-4xl font-bold text-[#2a2218]">500+</div>
-        <div className="text-sm text-[#5a472f]/80">Happy Clients</div>
+        <div className="text-2xl sm:text-4xl font-bold text-[#2a2218]">500+</div>
+        <div className="text-xs sm:text-sm text-[#5a472f]/80">Happy Clients</div>
       </div>
       <div className="flex items-baseline gap-2">
-        <div className="text-2xl lg:text-4xl font-bold text-[#2a2218]">99%</div>
-        <div className="text-sm text-[#5a472f]/80">Success Rate</div>
+        <div className="text-2xl sm:text-4xl font-bold text-[#2a2218]">99%</div>
+        <div className="text-xs sm:text-sm text-[#5a472f]/80">Success Rate</div>
       </div>
       <div className="flex items-baseline gap-2">
-        <div className="text-2xl lg:text-4xl font-bold text-[#2a2218]">24/7</div>
-        <div className="text-sm text-[#5a472f]/80">Support</div>
+        <div className="text-2xl sm:text-4xl font-bold text-[#2a2218]">24/7</div>
+        <div className="text-xs sm:text-sm text-[#5a472f]/80">Support</div>
       </div>
-    </div>
-  </div>
-);
-
-const HeroCopyMobile = () => (
-  <div className="max-w-xs mx-auto text-center text-[#2a2218] px-2">
-    <img
-      src="/Logo-01 (1).png"
-      alt="Vigil logo"
-      className="h-12 w-auto mx-auto mb-2 animate-fade-up"
-      style={{ animationDelay: "0.05s" }}
-    />
-
-    <h1
-      className="font-serif text-xl leading-tight font-black tracking-tight text-[#2a2218] mb-2 animate-fade-up"
-      style={{ animationDelay: "0.1s" }}
-    >
-      &ldquo;Empowering Your <span className="text-gradient">Business Growth</span>&rdquo;
-    </h1>
-
-    <p
-      className="text-[11px] leading-snug text-[#463726]/80 mb-2 max-w-[260px] mx-auto animate-fade-up"
-      style={{ animationDelay: "0.2s" }}
-    >
-      Vigil Safety Technologies delivers innovative solutions that transform the way you work.
-    </p>
-
-    <div
-      className="flex flex-row gap-2 justify-center items-center w-full max-w-[300px] mx-auto animate-fade-up"
-      style={{ animationDelay: "0.3s" }}
-    >
-      <Button variant="hero" size="sm" className="flex-1 min-w-0 text-[10px] px-2">
-        Start Your Journey
-        <ArrowRight className="ml-1 h-3 w-3" />
-      </Button>
-      <Button variant="heroOutline" size="sm" className="flex-1 min-w-0 text-[10px] px-2">
-        <Play className="mr-1 h-3 w-3" />
-        Watch Demo
-      </Button>
     </div>
   </div>
 );
@@ -199,19 +153,12 @@ const HeroSection = () => {
             {heroSlides.map((slide, index) => (
               <div className="flex-[0_0_100%] min-w-0 relative h-full" key={index}>
                 {slide.type === "brand" ? (
-                  <div className="absolute inset-0 flex items-center justify-center bg-[linear-gradient(135deg,#e5dcc9_0%,#cabda8_100%)]">
-                    <div className="absolute inset-0 opacity-30">
-                      <div className="absolute top-20 right-20 w-72 h-72 bg-[#c68a2a]/45 rounded-full blur-3xl" />
-                      <div className="absolute bottom-20 left-20 w-96 h-96 bg-[#f3ce96]/45 rounded-full blur-3xl" />
-                    </div>
-                    <div className="relative z-10 w-full px-2 sm:px-4 py-2 sm:py-6 sm:py-8 md:py-32 flex items-center justify-center min-h-full">
-                      <div className="sm:hidden w-full">
-                        <HeroCopyMobile />
-                      </div>
-                      <div className="hidden sm:block w-full">
-                        <HeroCopyDesktop />
-                      </div>
-                    </div>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-6 pointer-events-none">
+                    <img
+                      src="/Logo-01 (1).png"
+                      alt="Brand watermark"
+                      className="h-32 sm:h-48 md:h-64 w-auto"
+                    />
                   </div>
                 ) : (
                   <div className="relative h-full w-full bg-[#f8f1e3]">

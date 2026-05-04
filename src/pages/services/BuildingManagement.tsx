@@ -17,11 +17,11 @@ const BuildingManagement = () => {
               <Building2 className="h-8 w-8" />
             </div>
             <div>
-              <h1 className="font-serif text-4xl md:text-5xl font-bold">Building Management & ELV Systems</h1>
+              <h1 className="font-serif text-4xl md:text-5xl font-bold">Building Management and ELV Systems</h1>
             </div>
           </div>
           <p className="text-primary-foreground/90 text-lg max-w-3xl">
-            Integrated building automation and extra-low voltage systems for smart facilities.
+            Integrated systems to manage lighting, HVAC, security, and other building functions from a single platform.
           </p>
         </div>
       </div>
@@ -34,26 +34,26 @@ const BuildingManagement = () => {
             <div className="bg-card rounded-2xl p-8 shadow-soft mb-8">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Overview</h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                Our building management and ELV (Extra-Low Voltage) systems integrate all critical building functions into a unified control platform. From HVAC and lighting to security and fire safety, we manage every aspect of your facility's infrastructure.
+                Our building management and ELV systems bring together all essential building functions into one easy-to-manage platform. This includes systems like HVAC, lighting, security, fire alarms, and access control, allowing you to monitor and control everything from a central interface.
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+                By connecting these systems, you can improve energy usage, reduce manual intervention, and maintain better control over your facility. It also helps in identifying issues early and responding quickly when needed.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Create smart, efficient buildings that optimize energy consumption, enhance occupant comfort, and improve operational management.
+                These solutions are suitable for commercial buildings, offices, hospitals, and large facilities where managing multiple systems separately can be difficult and inefficient.
               </p>
             </div>
 
-            {/* Key Features */}
+            {/* Key Components */}
             <div className="bg-card rounded-2xl p-8 shadow-soft">
-              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">System Components</h2>
+              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Key Components</h2>
               <div className="space-y-4">
                 {[
-                  "HVAC & temperature control",
-                  "Lighting automation & control",
-                  "Access control integration",
-                  "CCTV & surveillance systems",
-                  "Fire alarm systems",
-                  "Energy monitoring & management",
-                  "Elevator management",
-                  "Centralized control & monitoring"
+                  "HVAC and Temperature Control Systems",
+                  "Lighting Automation and Control",
+                  "Access Control and Security Integration",
+                  "CCTV and Surveillance Systems",
+                  "Centralized Monitoring and Control Platform"
                 ].map((feature) => (
                   <div key={feature} className="flex items-start gap-4">
                     <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
@@ -66,16 +66,16 @@ const BuildingManagement = () => {
 
           {/* Sidebar */}
           <div>
-            <div className="bg-accent/10 rounded-2xl p-8 sticky top-20">
-              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Building Types</h3>
+            <div className="bg-accent/10 rounded-2xl p-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Industries We Serve</h3>
               <ul className="space-y-3 mb-8">
                 {[
-                  "Corporate Offices",
-                  "Shopping Centers",
-                  "Residential Complexes",
-                  "Hospitals",
-                  "Hotels & Hospitality",
-                  "Industrial Facilities"
+                  "Commercial Buildings and Offices",
+                  "Hospitals and Healthcare Facilities",
+                  "Hotels and Hospitality",
+                  "Shopping Malls and Retail Spaces",
+                  "Industrial and Manufacturing Units",
+                  "Educational Institutions"
                 ].map((type) => (
                   <li key={type} className="flex items-center gap-2">
                     <div className="h-2 w-2 bg-accent rounded-full" />
@@ -90,6 +90,24 @@ const BuildingManagement = () => {
                 </Button>
               </Link>
             </div>
+
+            {/* Standards and Compliances */}
+            <div className="bg-accent/10 rounded-2xl p-8 mt-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Standards and Compliances</h3>
+              <ul className="space-y-3">
+                {[
+                  "IEC Standards",
+                  "ISO 50001 (Energy Management)",
+                  "Fire and Safety Regulations",
+                  "Building and Electrical Safety Codes"
+                ].map((standard) => (
+                  <li key={standard} className="flex items-start gap-2">
+                    <div className="h-2 w-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                    <span className="text-foreground">{standard}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -97,19 +115,19 @@ const BuildingManagement = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {[
             {
+              icon: Zap,
+              title: "Centralized Control",
+              description: "Manage multiple building systems from one place, making operations simpler and more efficient."
+            },
+            {
               icon: Lightbulb,
               title: "Energy Efficiency",
-              description: "Reduce energy consumption with intelligent automation and monitoring"
+              description: "Monitor and optimize energy usage to reduce waste and lower operating costs."
             },
             {
               icon: Thermometer,
-              title: "Occupant Comfort",
-              description: "Maintain optimal temperature and lighting for maximum comfort"
-            },
-            {
-              icon: Zap,
-              title: "Smart Integration",
-              description: "Unified control of all building systems from a single platform"
+              title: "Improved Comfort",
+              description: "Maintain better control over lighting, temperature, and environment for occupants."
             }
           ].map((benefit) => (
             <div key={benefit.title} className="bg-card rounded-2xl p-8 shadow-soft">
@@ -124,9 +142,9 @@ const BuildingManagement = () => {
 
         {/* CTA Section */}
         <div className="bg-accent/10 rounded-2xl p-12 text-center">
-          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Create Your Smart Building</h2>
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Make Your Building Smarter</h2>
           <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-            Let our experts design an integrated building management system tailored to your facility's needs.
+            Use integrated systems to improve control, efficiency, and overall building performance.
           </p>
           <Link to="/#contact">
             <Button variant="accent" size="lg">

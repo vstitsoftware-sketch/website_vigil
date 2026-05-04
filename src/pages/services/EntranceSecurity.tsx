@@ -21,7 +21,7 @@ const EntranceSecurity = () => {
             </div>
           </div>
           <p className="text-primary-foreground/90 text-lg max-w-3xl">
-            Comprehensive security solutions for building entrances and checkpoints.
+            Reliable security systems to manage entry points, screen visitors, and protect your facility.
           </p>
         </div>
       </div>
@@ -34,26 +34,26 @@ const EntranceSecurity = () => {
             <div className="bg-card rounded-2xl p-8 shadow-soft mb-8">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Overview</h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                Our entrance security systems create a comprehensive first line of defense for your facility. We integrate multiple technologies to screen visitors, verify credentials, and maintain a secure perimeter at all entry points.
+                Our entrance security systems help you secure all entry and exit points of your facility. By combining different technologies, we make it easier to screen visitors, verify identity, and control access without slowing down daily operations.
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+                These systems are designed for places where security is critical, such as offices, industrial sites, and public buildings. From basic visitor management to advanced screening and monitoring, everything is set up to reduce risks and improve control at entry points.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                From advanced screening to visitor management and threat detection, our systems protect your premises while maintaining operational efficiency.
+                With proper tracking and reporting, you can maintain clear records of who enters and exits your premises at any time.
               </p>
             </div>
 
             {/* Key Features */}
             <div className="bg-card rounded-2xl p-8 shadow-soft">
-              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Security Capabilities</h2>
+              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Key Components</h2>
               <div className="space-y-4">
                 {[
-                  "Metal detection systems",
-                  "X-ray and baggage screening",
-                  "Facial recognition technology",
-                  "Visitor registration & badges",
-                  "Queue management systems",
-                  "Emergency lockdown capability",
-                  "CCTV integration",
-                  "Access logs & reporting"
+                  "Metal Detection Systems",
+                  "X-ray and Baggage Scanning Systems",
+                  "Facial Recognition and Identity Verification",
+                  "Visitor Management and Badge Systems",
+                  "CCTV Integration and Monitoring"
                 ].map((feature) => (
                   <div key={feature} className="flex items-start gap-4">
                     <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
@@ -66,16 +66,16 @@ const EntranceSecurity = () => {
 
           {/* Sidebar */}
           <div>
-            <div className="bg-accent/10 rounded-2xl p-8 sticky top-20">
-              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Protected Facilities</h3>
+            <div className="bg-accent/10 rounded-2xl p-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Industries We Serve</h3>
               <ul className="space-y-3 mb-8">
                 {[
+                  "Corporate Offices and IT Parks",
+                  "Airports and Transport Hubs",
+                  "Industrial and Manufacturing Units",
                   "Government Buildings",
-                  "Airports & Terminals",
-                  "Corporate Offices",
-                  "Banks & Financial",
-                  "Healthcare Facilities",
-                  "Event Venues"
+                  "Educational Institutions",
+                  "Hospitals and Healthcare Facilities"
                 ].map((facility) => (
                   <li key={facility} className="flex items-center gap-2">
                     <div className="h-2 w-2 bg-accent rounded-full" />
@@ -90,6 +90,24 @@ const EntranceSecurity = () => {
                 </Button>
               </Link>
             </div>
+
+            {/* Standards and Compliances */}
+            <div className="bg-accent/10 rounded-2xl p-8 mt-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Standards and Compliances</h3>
+              <ul className="space-y-3">
+                {[
+                  "Security Screening Standards",
+                  "IEC Safety Standards",
+                  "Data Protection and Privacy Guidelines",
+                  "Local Security and Building Regulations"
+                ].map((standard) => (
+                  <li key={standard} className="flex items-start gap-2">
+                    <div className="h-2 w-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                    <span className="text-foreground">{standard}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -97,19 +115,19 @@ const EntranceSecurity = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {[
             {
-              icon: Eye,
-              title: "Threat Detection",
-              description: "Identify and intercept potential threats before they enter"
+              icon: Shield,
+              title: "Stronger Entry Control",
+              description: "Monitor and manage all entry points to prevent unauthorized access."
             },
             {
-              icon: Shield,
-              title: "Complete Screening",
-              description: "Comprehensive verification of all visitors and their belongings"
+              icon: Eye,
+              title: "Efficient Screening",
+              description: "Check visitors and belongings quickly without creating delays."
             },
             {
               icon: Zap,
-              title: "Smooth Operations",
-              description: "Manage security without creating bottlenecks or delays"
+              title: "Complete Visibility",
+              description: "Maintain records and monitor activity at all entrances in real time."
             }
           ].map((benefit) => (
             <div key={benefit.title} className="bg-card rounded-2xl p-8 shadow-soft">
@@ -124,13 +142,13 @@ const EntranceSecurity = () => {
 
         {/* CTA Section */}
         <div className="bg-accent/10 rounded-2xl p-12 text-center">
-          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Secure Your Entrances Today</h2>
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Secure Every Entry Point</h2>
           <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-            Deploy comprehensive entrance security for maximum protection and visitor safety.
+            Set up a reliable entrance security system to protect your people and premises.
           </p>
           <Link to="/#contact">
             <Button variant="accent" size="lg">
-              Schedule Security Review
+              Schedule Consultation
             </Button>
           </Link>
         </div>

@@ -21,7 +21,7 @@ const VehicleTracking = () => {
             </div>
           </div>
           <p className="text-primary-foreground/90 text-lg max-w-3xl">
-            Real-time GPS tracking and fleet management for transportation efficiency.
+            Real-time GPS tracking solutions to monitor vehicles, manage fleets, and improve operational efficiency.
           </p>
         </div>
       </div>
@@ -34,26 +34,26 @@ const VehicleTracking = () => {
             <div className="bg-card rounded-2xl p-8 shadow-soft mb-8">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Overview</h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                Our vehicle tracking systems provide real-time GPS location monitoring and comprehensive fleet management solutions. Track your vehicles, optimize routes, and improve operational efficiency with our advanced tracking technology.
+                Our vehicle tracking systems help you monitor your fleet in real time and stay in control of day-to-day operations. Using GPS technology, you can track vehicle locations, view trip history, and ensure everything is running as planned.
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+                The system is designed for businesses of all sizes, whether you manage a few vehicles or a large fleet. It helps improve route planning, reduce unnecessary fuel usage, and keep track of driver activity.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Whether managing a small fleet or a large transportation network, our systems deliver the insights you need to make smarter decisions and reduce costs.
+                With access through mobile and web dashboards, you can check updates anytime and make quick decisions based on accurate, real-time data.
               </p>
             </div>
 
-            {/* Key Features */}
+            {/* Key Components */}
             <div className="bg-card rounded-2xl p-8 shadow-soft">
-              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Tracking Features</h2>
+              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Key Components</h2>
               <div className="space-y-4">
                 {[
-                  "Real-time GPS location tracking",
-                  "Historical trip data and reporting",
-                  "Route optimization algorithms",
-                  "Geofencing and boundary alerts",
-                  "Driver behavior monitoring",
-                  "Fuel consumption tracking",
-                  "Maintenance scheduling",
-                  "Mobile and web dashboard access"
+                  "GPS-Based Vehicle Tracking Devices",
+                  "Real-Time Monitoring Dashboard",
+                  "Trip History and Reporting System",
+                  "Geofencing and Alert System",
+                  "Driver Behavior and Performance Monitoring"
                 ].map((feature) => (
                   <div key={feature} className="flex items-start gap-4">
                     <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
@@ -66,16 +66,16 @@ const VehicleTracking = () => {
 
           {/* Sidebar */}
           <div>
-            <div className="bg-accent/10 rounded-2xl p-8 sticky top-20">
-              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Fleet Types</h3>
+            <div className="bg-accent/10 rounded-2xl p-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Industries We Serve</h3>
               <ul className="space-y-3 mb-8">
                 {[
-                  "Delivery Fleets",
-                  "Taxi & Rideshare",
-                  "Logistics & Trucking",
-                  "Public Transportation",
-                  "Construction Vehicles",
-                  "Field Service Vehicles"
+                  "Logistics and Transportation",
+                  "Delivery and Courier Services",
+                  "Construction and Equipment Fleets",
+                  "Public Transport Operators",
+                  "Corporate Fleet Management",
+                  "Field Service Businesses"
                 ].map((type) => (
                   <li key={type} className="flex items-center gap-2">
                     <div className="h-2 w-2 bg-accent rounded-full" />
@@ -90,6 +90,24 @@ const VehicleTracking = () => {
                 </Button>
               </Link>
             </div>
+
+            {/* Standards and Compliances */}
+            <div className="bg-accent/10 rounded-2xl p-8 mt-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Standards and Compliances</h3>
+              <ul className="space-y-3">
+                {[
+                  "AIS 140 Compliance (India Vehicle Tracking Standard)",
+                  "GPS and Telematics Standards",
+                  "Data Security and Privacy Guidelines",
+                  "Transport Authority Regulations"
+                ].map((standard) => (
+                  <li key={standard} className="flex items-start gap-2">
+                    <div className="h-2 w-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                    <span className="text-foreground">{standard}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -97,19 +115,19 @@ const VehicleTracking = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {[
             {
-              icon: MapIcon,
-              title: "Route Optimization",
-              description: "Reduce travel time and fuel costs with intelligent route planning"
-            },
-            {
-              icon: Zap,
-              title: "Real-time Visibility",
-              description: "Monitor fleet location and status with live tracking dashboard"
+              icon: MapPin,
+              title: "Live Tracking",
+              description: "Know the exact location of your vehicles at any time with real-time updates."
             },
             {
               icon: BarChart,
-              title: "Data Analytics",
-              description: "Gain insights into fleet performance and identify improvement areas"
+              title: "Better Fleet Control",
+              description: "Monitor routes, driver activity, and usage to improve overall fleet management."
+            },
+            {
+              icon: Zap,
+              title: "Cost Savings",
+              description: "Reduce fuel costs, avoid misuse, and improve efficiency with better planning."
             }
           ].map((benefit) => (
             <div key={benefit.title} className="bg-card rounded-2xl p-8 shadow-soft">
@@ -124,13 +142,13 @@ const VehicleTracking = () => {
 
         {/* CTA Section */}
         <div className="bg-accent/10 rounded-2xl p-12 text-center">
-          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Optimize Your Fleet Operations</h2>
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Take Control of Your Fleet</h2>
           <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-            Implement our vehicle tracking system to improve efficiency and reduce operational costs.
+            Track your vehicles in real time and improve efficiency across your operations.
           </p>
           <Link to="/#contact">
             <Button variant="accent" size="lg">
-              Schedule Demo
+              Schedule Consultation
             </Button>
           </Link>
         </div>

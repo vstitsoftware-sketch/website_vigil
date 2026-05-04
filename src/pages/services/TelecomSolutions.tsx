@@ -21,7 +21,7 @@ const TelecomSolutions = () => {
             </div>
           </div>
           <p className="text-primary-foreground/90 text-lg max-w-3xl">
-            Modern telecommunications infrastructure for seamless connectivity and communication.
+            Scalable and reliable communication infrastructure designed to keep your enterprise connected, productive, and future-ready.
           </p>
         </div>
       </div>
@@ -34,26 +34,26 @@ const TelecomSolutions = () => {
             <div className="bg-card rounded-2xl p-8 shadow-soft mb-8">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Overview</h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                Our telecom solutions deliver robust, scalable telecommunications infrastructure for enterprises of all sizes. We provide comprehensive connectivity solutions that keep your organization connected and productive.
+                Our telecom solutions provide end-to-end communication infrastructure tailored to modern enterprise demands. From high-performance voice systems, including EPBX and intercom solutions, to resilient data networks, we design and deploy systems that ensure seamless connectivity across your organization.
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+                We handle the complete lifecycle—from network design and implementation to ongoing monitoring and maintenance—ensuring high availability and consistent performance. Our EPBX systems enable efficient internal and external communication management, while intercom solutions enhance on-site coordination and security across facilities.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                From network design to implementation and maintenance, we ensure reliable communication channels for your business operations.
+                Built with scalability and reliability at the core, our solutions incorporate redundancy and failover mechanisms to maintain uninterrupted communication, even in critical or high-demand environments.
               </p>
             </div>
 
-            {/* Key Features */}
+            {/* Key Components */}
             <div className="bg-card rounded-2xl p-8 shadow-soft">
-              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Solutions Offered</h2>
+              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Key Components</h2>
               <div className="space-y-4">
                 {[
-                  "Enterprise VoIP systems",
-                  "Network infrastructure design",
-                  "Broadband connectivity",
-                  "Private wireless networks",
-                  "Unified communication solutions",
-                  "Data transmission systems",
-                  "Redundancy and disaster recovery",
-                  "24/7 technical support"
+                  "Enterprise VoIP & EPBX Systems",
+                  "Intercom & Internal Communication Systems",
+                  "Network Infrastructure Design & Deployment",
+                  "Broadband & Dedicated Connectivity Solutions",
+                  "Unified Communication Platforms"
                 ].map((feature) => (
                   <div key={feature} className="flex items-start gap-4">
                     <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
@@ -66,20 +66,20 @@ const TelecomSolutions = () => {
 
           {/* Sidebar */}
           <div>
-            <div className="bg-accent/10 rounded-2xl p-8 sticky top-20">
-              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Technology Stack</h3>
+            <div className="bg-accent/10 rounded-2xl p-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Industries We Serve</h3>
               <ul className="space-y-3 mb-8">
                 {[
-                  "5G Ready Infrastructure",
-                  "Fiber Optic Networks",
-                  "Cloud Integration",
-                  "IoT Enabled",
-                  "Scalable Systems",
-                  "Enterprise Grade"
-                ].map((tech) => (
-                  <li key={tech} className="flex items-center gap-2">
+                  "IT & Corporate Enterprises",
+                  "Manufacturing & Industrial Units",
+                  "Healthcare & Hospitals",
+                  "Educational Institutions",
+                  "Retail & Multi-Location Businesses",
+                  "Logistics & Warehousing"
+                ].map((industry) => (
+                  <li key={industry} className="flex items-center gap-2">
                     <div className="h-2 w-2 bg-accent rounded-full" />
-                    <span className="text-foreground">{tech}</span>
+                    <span className="text-foreground">{industry}</span>
                   </li>
                 ))}
               </ul>
@@ -90,26 +90,43 @@ const TelecomSolutions = () => {
                 </Button>
               </Link>
             </div>
+
+            {/* Standards and Compliances */}
+            <div className="bg-accent/10 rounded-2xl p-8 mt-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Standards and Compliances</h3>
+              <ul className="space-y-3">
+                {[
+                  "TRAI Regulations (India Telecom Standards)",
+                  "ITU-T Communication Standards",
+                  "ISO/IEC Network Security Standards",
+                  "Data Protection & Compliance Guidelines"
+                ].map((standard) => (
+                  <li key={standard} className="flex items-start gap-2">
+                    <div className="h-2 w-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                    <span className="text-foreground">{standard}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
-
         {/* Benefits */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {[
             {
               icon: Globe,
-              title: "Global Connectivity",
-              description: "Connect with teams and customers worldwide with reliable networks"
+              title: "Seamless Connectivity",
+              description: "Ensure uninterrupted communication across teams, locations, and devices with high-performance network infrastructure."
             },
             {
               icon: Zap,
-              title: "High Performance",
-              description: "Low latency and high-speed connectivity for optimal productivity"
+              title: "Scalable Architecture",
+              description: "Flexible telecom systems designed to grow with your business without major infrastructure changes."
             },
             {
               icon: Smartphone,
-              title: "Mobile Ready",
-              description: "Seamless integration with mobile devices and remote work solutions"
+              title: "High Reliability",
+              description: "Built-in redundancy and failover mechanisms ensure continuous operations even during network disruptions."
             }
           ].map((benefit) => (
             <div key={benefit.title} className="bg-card rounded-2xl p-8 shadow-soft">
@@ -124,9 +141,9 @@ const TelecomSolutions = () => {
 
         {/* CTA Section */}
         <div className="bg-accent/10 rounded-2xl p-12 text-center">
-          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Connect Your Business Today</h2>
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Upgrade Your Communication Infrastructure</h2>
           <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-            Let our telecom experts design a connectivity solution that matches your organization's needs.
+            Deploy reliable, scalable telecom solutions that keep your business connected and operational at all times.
           </p>
           <Link to="/#contact">
             <Button variant="accent" size="lg">

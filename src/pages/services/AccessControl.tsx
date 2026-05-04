@@ -21,7 +21,7 @@ const AccessControl = () => {
             </div>
           </div>
           <p className="text-primary-foreground/90 text-lg max-w-3xl">
-            Smart access management for secure and controlled entry to facilities.
+            Simple and secure access management for controlled entry across your facility.
           </p>
         </div>
       </div>
@@ -34,26 +34,26 @@ const AccessControl = () => {
             <div className="bg-card rounded-2xl p-8 shadow-soft mb-8">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Overview</h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                Our access control systems provide intelligent entry management for buildings, rooms, and restricted areas. Using modern authentication methods, we ensure only authorized personnel can access sensitive areas while maintaining complete audit trails.
+                Our access control systems help you manage who can enter specific areas within your facility. Using modern authentication methods like cards, PINs, biometrics, and mobile access, you can ensure that only authorized people are allowed entry.
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+                The system gives you full control over doors, entry points, and restricted zones. You can define access rules based on time, roles, or departments, making it easier to manage staff movement without manual supervision.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                From card readers and biometrics to mobile credentials, our solutions offer flexibility and security for every access scenario.
+                With built-in tracking and reporting, you can monitor access activity and maintain clear records for security and compliance purposes.
               </p>
             </div>
 
             {/* Key Features */}
             <div className="bg-card rounded-2xl p-8 shadow-soft">
-              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">System Features</h2>
+              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Key Components</h2>
               <div className="space-y-4">
                 {[
-                  "Multiple credential types (card, PIN, biometric)",
-                  "Door lock control and monitoring",
-                  "Elevator access integration",
-                  "Time-based access rules",
-                  "Visitor management",
-                  "Real-time access reporting",
-                  "Mobile app access control",
-                  "Emergency override capabilities"
+                  "Card, PIN, and Biometric Access Systems",
+                  "Door Lock Control and Monitoring",
+                  "Time-Based Access Management",
+                  "Visitor Management System",
+                  "Real-Time Access Logs and Reporting"
                 ].map((feature) => (
                   <div key={feature} className="flex items-start gap-4">
                     <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
@@ -66,20 +66,20 @@ const AccessControl = () => {
 
           {/* Sidebar */}
           <div>
-            <div className="bg-accent/10 rounded-2xl p-8 sticky top-20">
-              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Authentication Methods</h3>
+            <div className="bg-accent/10 rounded-2xl p-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Industries We Serve</h3>
               <ul className="space-y-3 mb-8">
                 {[
-                  "Access Cards/Badges",
-                  "Biometric Recognition",
-                  "PIN/Passcodes",
-                  "Mobile Credentials",
-                  "Multi-factor Auth",
-                  "Hybrid Systems"
-                ].map((method) => (
-                  <li key={method} className="flex items-center gap-2">
+                  "Offices and Corporate Buildings",
+                  "Industrial and Manufacturing Units",
+                  "Hospitals and Healthcare Facilities",
+                  "Educational Institutions",
+                  "Data Centers and IT Facilities",
+                  "Residential and Gated Communities"
+                ].map((industry) => (
+                  <li key={industry} className="flex items-center gap-2">
                     <div className="h-2 w-2 bg-accent rounded-full" />
-                    <span className="text-foreground">{method}</span>
+                    <span className="text-foreground">{industry}</span>
                   </li>
                 ))}
               </ul>
@@ -90,6 +90,24 @@ const AccessControl = () => {
                 </Button>
               </Link>
             </div>
+
+            {/* Standards and Compliances */}
+            <div className="bg-accent/10 rounded-2xl p-8 mt-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Standards and Compliances</h3>
+              <ul className="space-y-3">
+                {[
+                  "IEC Security Standards",
+                  "Data Protection and Privacy Guidelines",
+                  "Workplace Safety Regulations",
+                  "Access Control System Compliance Standards"
+                ].map((standard) => (
+                  <li key={standard} className="flex items-start gap-2">
+                    <div className="h-2 w-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                    <span className="text-foreground">{standard}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -98,18 +116,18 @@ const AccessControl = () => {
           {[
             {
               icon: Shield,
-              title: "Enhanced Security",
-              description: "Control and monitor who enters your facility at all times"
+              title: "Controlled Access",
+              description: "Ensure only authorized individuals can enter specific areas within your facility."
             },
             {
               icon: Users,
-              title: "User Management",
-              description: "Easily add, remove, or modify access privileges for employees"
+              title: "Easy Management",
+              description: "Set access rules and manage permissions without manual tracking."
             },
             {
               icon: Zap,
-              title: "Audit Trail",
-              description: "Track all access events for security and compliance purposes"
+              title: "Full Visibility",
+              description: "Track entry and exit activity with detailed logs and real-time updates."
             }
           ].map((benefit) => (
             <div key={benefit.title} className="bg-card rounded-2xl p-8 shadow-soft">
@@ -124,9 +142,9 @@ const AccessControl = () => {
 
         {/* CTA Section */}
         <div className="bg-accent/10 rounded-2xl p-12 text-center">
-          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Control Access with Confidence</h2>
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Take Control of Your Facility Access</h2>
           <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-            Implement our access control system to secure your facilities and manage entry intelligently.
+            Manage entry points securely and efficiently with a reliable access control system.
           </p>
           <Link to="/#contact">
             <Button variant="accent" size="lg">

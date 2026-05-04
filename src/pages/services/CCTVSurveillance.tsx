@@ -72,26 +72,23 @@ const CCTVSurveillance = () => {
             <div className="bg-card rounded-2xl p-8 shadow-soft mb-8">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Overview</h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                Our CCTV surveillance systems provide comprehensive video monitoring and recording solutions designed to enhance security and safety across various sectors. Whether you're managing a large manufacturing facility, government building, healthcare institution, or retail environment, our systems deliver reliable, high-definition surveillance.
+                AI-enabled surveillance cameras use artificial intelligence to analyze video in real time. They can detect objects, recognize faces, and identify unusual behavior, reducing the need for constant human monitoring.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                We integrate cutting-edge camera technology with intelligent storage and management systems to give you complete visibility and control over your premises.
+                These systems improve security and safety  by sending instant alerts of specific  events and offering features like facial recognition, license plate recognition and traffic Violations . They are widely used in residentials , businesses, and public spaces.
               </p>
             </div>
 
-            {/* Key Features */}
+            {/* Key Components */}
             <div className="bg-card rounded-2xl p-8 shadow-soft">
-              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Key Features</h2>
+              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Key Components</h2>
               <div className="space-y-4">
                 {[
-                  "High-definition video recording (4K, Full HD)",
-                  "24/7 continuous monitoring capabilities",
-                  "Remote access and mobile viewing",
-                  "Intelligent motion detection and alerts",
-                  "Cloud and local storage options",
-                  "Advanced analytics and pattern recognition",
-                  "Scalable system architecture",
-                  "Integration with access control systems"
+                  "AI Enabled Cameras",
+                  "Video Monitoring System (VMS)",
+                  "Network Video Recorders",
+                  "Video Management Servers",
+                  "Video Analytics Engine"
                 ].map((feature) => (
                   <div key={feature} className="flex items-start gap-4">
                     <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
@@ -104,7 +101,7 @@ const CCTVSurveillance = () => {
 
           {/* Sidebar */}
           <div>
-            <div className="bg-accent/10 rounded-2xl p-8 sticky top-20">
+            <div className="bg-accent/10 rounded-2xl p-8">
               <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Industries We Serve</h3>
               <ul className="space-y-3 mb-8">
                 {[
@@ -128,6 +125,24 @@ const CCTVSurveillance = () => {
                 </Button>
               </Link>
             </div>
+
+            {/* Standards and Compliances */}
+            <div className="bg-accent/10 rounded-2xl p-8 mt-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Standards and Compliances</h3>
+              <ul className="space-y-3">
+                {[
+                  "ISO 2009-2015",
+                  "VAPT Tested solutions",
+                  "We Integrate EN, UL, BIS and STQC certified products",
+                  "MSME"
+                ].map((standard) => (
+                  <li key={standard} className="flex items-start gap-2">
+                    <div className="h-2 w-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                    <span className="text-foreground">{standard}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -136,18 +151,18 @@ const CCTVSurveillance = () => {
           {[
             {
               icon: Shield,
-              title: "Enhanced Security",
-              description: "Deter criminal activity and monitor suspicious behavior in real-time"
+              title: "AI-Powered Analysis",
+              description: "Real-time video analysis using artificial intelligence."
             },
             {
               icon: Users,
-              title: "Operational Monitoring",
-              description: "Track employee activity, customer behavior, and facility operations"
+              title: "Advanced Detection",
+              description: "Object detection, classification and facial recognition (people, vehicles, animals)."
             },
             {
               icon: Zap,
-              title: "Rapid Response",
-              description: "Enable quick response to incidents with instant video access and alerts"
+              title: "Instant Alerts",
+              description: "Instant alerts for suspicious or unusual activities."
             }
           ].map((benefit) => (
             <div key={benefit.title} className="bg-card rounded-2xl p-8 shadow-soft">

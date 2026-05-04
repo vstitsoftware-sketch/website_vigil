@@ -21,7 +21,7 @@ const KeyManagement = () => {
             </div>
           </div>
           <p className="text-primary-foreground/90 text-lg max-w-3xl">
-            Secure tracking and management of keys and access credentials for facilities.
+            Secure and organized control of keys and access credentials across your facility.
           </p>
         </div>
       </div>
@@ -34,26 +34,26 @@ const KeyManagement = () => {
             <div className="bg-card rounded-2xl p-8 shadow-soft mb-8">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Overview</h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                Our key management systems provide secure, automated control over physical keys and access credentials. Track who has access to which areas, manage key distribution, and audit access to sensitive facilities with complete transparency.
+                Our key management systems help you keep track of all physical keys and control who can access them. Instead of manual registers or unsecured storage, keys are stored in secure cabinets with controlled access.
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+                The system records every key issue and return, so you always know who has taken a key and when it was used. This improves accountability and reduces the risk of loss or misuse.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Eliminate the security risks of lost, misplaced, or improperly distributed keys with intelligent key management and tracking.
+                It is especially useful for facilities with multiple access points, shared equipment, or high-security areas where proper key control is important.
               </p>
             </div>
 
             {/* Key Features */}
             <div className="bg-card rounded-2xl p-8 shadow-soft">
-              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">System Capabilities</h2>
+              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Key Components</h2>
               <div className="space-y-4">
                 {[
-                  "Secure key storage cabinets",
-                  "Automated key checkout/check-in",
-                  "Access logs and audit trails",
-                  "Authorization-based distribution",
-                  "Key duplication prevention",
-                  "Personnel tracking",
-                  "Real-time monitoring",
-                  "Custom reporting"
+                  "Secure Key Storage Cabinets",
+                  "Automated Key Issue and Return System",
+                  "Access Control and Authorization Settings",
+                  "Key Usage Logs and Audit Trails",
+                  "Monitoring and Reporting Dashboard"
                 ].map((feature) => (
                   <div key={feature} className="flex items-start gap-4">
                     <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
@@ -66,16 +66,16 @@ const KeyManagement = () => {
 
           {/* Sidebar */}
           <div>
-            <div className="bg-accent/10 rounded-2xl p-8 sticky top-20">
-              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Key Types</h3>
+            <div className="bg-accent/10 rounded-2xl p-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Industries We Serve</h3>
               <ul className="space-y-3 mb-8">
                 {[
-                  "Building Access Keys",
-                  "Room & Office Keys",
-                  "Equipment Keys",
-                  "Safe & Vault Keys",
-                  "Vehicle Keys",
-                  "Master Keys"
+                  "Industrial and Manufacturing Units",
+                  "Commercial Buildings and Offices",
+                  "Hotels and Hospitality",
+                  "Hospitals and Healthcare Facilities",
+                  "Warehouses and Logistics",
+                  "Government and High-Security Facilities"
                 ].map((type) => (
                   <li key={type} className="flex items-center gap-2">
                     <div className="h-2 w-2 bg-accent rounded-full" />
@@ -90,6 +90,24 @@ const KeyManagement = () => {
                 </Button>
               </Link>
             </div>
+
+            {/* Standards and Compliances */}
+            <div className="bg-accent/10 rounded-2xl p-8 mt-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Standards and Compliances</h3>
+              <ul className="space-y-3">
+                {[
+                  "Security Management Guidelines",
+                  "Access Control and Audit Standards",
+                  "Data Logging and Reporting Requirements",
+                  "Facility Safety Regulations"
+                ].map((standard) => (
+                  <li key={standard} className="flex items-start gap-2">
+                    <div className="h-2 w-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                    <span className="text-foreground">{standard}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -98,18 +116,18 @@ const KeyManagement = () => {
           {[
             {
               icon: Lock,
-              title: "Enhanced Security",
-              description: "Eliminate unauthorized key access and prevent duplicate keys"
+              title: "Better Control",
+              description: "Know exactly who has access to each key and avoid unauthorized usage."
             },
             {
               icon: Shield,
-              title: "Accountability",
-              description: "Track exactly who checked out each key and when"
+              title: "Improved Security",
+              description: "Reduce the risk of lost or misused keys with secure storage and tracking."
             },
             {
               icon: BarChart,
-              title: "Compliance",
-              description: "Maintain audit trails for security and compliance requirements"
+              title: "Clear Records",
+              description: "Maintain complete logs of key usage for audits and internal tracking."
             }
           ].map((benefit) => (
             <div key={benefit.title} className="bg-card rounded-2xl p-8 shadow-soft">
@@ -124,9 +142,9 @@ const KeyManagement = () => {
 
         {/* CTA Section */}
         <div className="bg-accent/10 rounded-2xl p-12 text-center">
-          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Control Your Keys Completely</h2>
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Take Control of Your Key Management</h2>
           <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-            Implement our key management system for secure tracking and accountability of all access credentials.
+            Manage keys securely and improve accountability across your facility.
           </p>
           <Link to="/#contact">
             <Button variant="accent" size="lg">

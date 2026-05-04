@@ -21,7 +21,7 @@ const AutomationSystems = () => {
             </div>
           </div>
           <p className="text-primary-foreground/90 text-lg max-w-3xl">
-            Smart automation solutions to streamline operations and increase efficiency.
+            Intelligent automation solutions that streamline operations, enhance efficiency, and enable real-time control across your organization.
           </p>
         </div>
       </div>
@@ -34,26 +34,26 @@ const AutomationSystems = () => {
             <div className="bg-card rounded-2xl p-8 shadow-soft mb-8">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Overview</h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                Our automation systems transform manual processes into intelligent, automated workflows. We leverage cutting-edge technology to help your organization achieve greater efficiency, reduce operational costs, and improve accuracy.
+                Our automation systems convert manual and repetitive processes into intelligent, data-driven workflows that improve operational efficiency and accuracy. By integrating advanced control systems, IoT technologies, and analytics, we help organizations optimize performance while reducing human intervention and operational costs.
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+                We design and implement automation solutions across industrial, commercial, and enterprise environments—tailored to your specific processes and scalability requirements. This includes building-level automation such as lighting control, as well as access and structural automation like automated gates and motorized roof systems.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                Whether you need industrial automation, building automation, or process automation, we provide comprehensive solutions tailored to your specific needs.
+                From initial system design to deployment and ongoing support, we ensure seamless integration with your existing infrastructure. With real-time monitoring and centralized control, our solutions empower you to make faster, more informed decisions while maintaining consistency and reliability in operations.
               </p>
             </div>
 
-            {/* Key Features */}
+            {/* Key Components */}
             <div className="bg-card rounded-2xl p-8 shadow-soft">
-              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Automation Solutions</h2>
+              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Key Components</h2>
               <div className="space-y-4">
                 {[
-                  "Industrial process automation",
-                  "Building management automation",
-                  "Workflow automation",
-                  "IoT integration",
-                  "Real-time monitoring and control",
-                  "Data collection and analytics",
-                  "Smart scheduling systems",
-                  "Remote operation capabilities"
+                  "Industrial Process Automation Systems",
+                  "Building Management & Control Systems (BMS)",
+                  "Lighting Automation Systems (Smart & Energy-Efficient Control)",
+                  "Gate & Access Automation Systems",
+                  "Roof & Structural Automation Systems (Motorized Control)"
                 ].map((feature) => (
                   <div key={feature} className="flex items-start gap-4">
                     <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
@@ -66,16 +66,16 @@ const AutomationSystems = () => {
 
           {/* Sidebar */}
           <div>
-            <div className="bg-accent/10 rounded-2xl p-8 sticky top-20">
-              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Industry Applications</h3>
+            <div className="bg-accent/10 rounded-2xl p-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Industries We Serve</h3>
               <ul className="space-y-3 mb-8">
                 {[
-                  "Manufacturing",
+                  "Manufacturing & Industrial Plants",
+                  "Commercial Buildings & Smart Facilities",
                   "Energy & Utilities",
-                  "Smart Buildings",
-                  "Transportation",
-                  "Logistics",
-                  "Retail Operations"
+                  "Warehousing & Logistics",
+                  "Healthcare Facilities",
+                  "IT & Corporate Offices"
                 ].map((industry) => (
                   <li key={industry} className="flex items-center gap-2">
                     <div className="h-2 w-2 bg-accent rounded-full" />
@@ -90,6 +90,24 @@ const AutomationSystems = () => {
                 </Button>
               </Link>
             </div>
+
+            {/* Standards and Compliances */}
+            <div className="bg-accent/10 rounded-2xl p-8 mt-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Standards and Compliances</h3>
+              <ul className="space-y-3">
+                {[
+                  "IEC (International Electrotechnical Commission) Standards",
+                  "ISO 9001 (Quality Management Systems)",
+                  "ISO/IEC 27001 (Information Security for Automation Systems)",
+                  "Industry-Specific Safety & Control Regulations"
+                ].map((standard) => (
+                  <li key={standard} className="flex items-start gap-2">
+                    <div className="h-2 w-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                    <span className="text-foreground">{standard}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -98,18 +116,18 @@ const AutomationSystems = () => {
           {[
             {
               icon: BarChart,
-              title: "Increased Efficiency",
-              description: "Reduce manual work and accelerate operational processes significantly"
-            },
-            {
-              icon: TrendingUp,
-              title: "Cost Reduction",
-              description: "Lower operational expenses through optimized resource utilization"
+              title: "Operational Efficiency",
+              description: "Automate repetitive tasks and optimize workflows to increase productivity and reduce manual effort."
             },
             {
               icon: Cog,
-              title: "Enhanced Control",
-              description: "Precise control and monitoring of all automated processes and systems"
+              title: "Real-Time Control",
+              description: "Monitor and manage systems—including lighting, access, and infrastructure—through centralized dashboards and intelligent controls."
+            },
+            {
+              icon: TrendingUp,
+              title: "Cost Optimization",
+              description: "Reduce operational costs through energy-efficient automation, predictive maintenance, and minimized downtime."
             }
           ].map((benefit) => (
             <div key={benefit.title} className="bg-card rounded-2xl p-8 shadow-soft">
@@ -124,9 +142,9 @@ const AutomationSystems = () => {
 
         {/* CTA Section */}
         <div className="bg-accent/10 rounded-2xl p-12 text-center">
-          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Automate Your Operations</h2>
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Transform Your Operations with Automation</h2>
           <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-            Discover how our automation solutions can transform your business processes and improve productivity.
+            Implement intelligent automation systems—from process control to smart infrastructure—that enhance efficiency, accuracy, and control across your business.
           </p>
           <Link to="/#contact">
             <Button variant="accent" size="lg">

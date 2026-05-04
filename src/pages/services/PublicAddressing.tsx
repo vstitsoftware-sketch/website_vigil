@@ -21,7 +21,7 @@ const PublicAddressing = () => {
             </div>
           </div>
           <p className="text-primary-foreground/90 text-lg max-w-3xl">
-            Reliable communication solutions for public announcements and emergency alerts.
+            Reliable audio systems for clear announcements and quick communication across your facility.
           </p>
         </div>
       </div>
@@ -34,26 +34,26 @@ const PublicAddressing = () => {
             <div className="bg-card rounded-2xl p-8 shadow-soft mb-8">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Overview</h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                Our public addressing systems deliver clear, reliable announcements throughout your facility. Designed for both routine communications and emergency situations, our systems ensure that critical messages reach everyone quickly and effectively.
+                Our public addressing systems are designed to deliver clear and consistent audio for both daily announcements and emergency situations. Whether it is routine communication or urgent alerts, the system ensures messages are heard across all required areas without confusion.
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+                We design and install PA systems based on your facility layout, coverage needs, and usage type. From offices and campuses to transport hubs and large public spaces, the setup is planned to provide even sound distribution and dependable performance.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                From airports and transit stations to corporate buildings and educational institutions, our PA systems are engineered for performance and reliability in any environment.
+                These systems can also be integrated with fire alarms and safety systems, so important alerts are automatically broadcast when needed.
               </p>
             </div>
 
-            {/* Key Features */}
+            {/* Key Components */}
             <div className="bg-card rounded-2xl p-8 shadow-soft">
-              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">System Features</h2>
+              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Key Components</h2>
               <div className="space-y-4">
                 {[
-                  "Multi-zone announcement capability",
-                  "High-quality audio output",
-                  "Emergency override functionality",
-                  "Centralized control console",
-                  "Integration with alarm systems",
-                  "Microphone and line inputs",
-                  "Background music capability",
-                  "Remote access and control"
+                  "Multi-Zone Announcement Systems",
+                  "High-Quality Speakers and Amplifiers",
+                  "Centralized Control Console",
+                  "Emergency Override System",
+                  "Alarm and Safety System Integration"
                 ].map((feature) => (
                   <div key={feature} className="flex items-start gap-4">
                     <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
@@ -66,16 +66,16 @@ const PublicAddressing = () => {
 
           {/* Sidebar */}
           <div>
-            <div className="bg-accent/10 rounded-2xl p-8 sticky top-20">
-              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Applications</h3>
+            <div className="bg-accent/10 rounded-2xl p-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Industries We Serve</h3>
               <ul className="space-y-3 mb-8">
                 {[
-                  "Airports & Transportation",
-                  "Shopping Malls",
-                  "Educational Institutions",
-                  "Corporate Buildings",
-                  "Hospitals & Healthcare",
-                  "Manufacturing Facilities"
+                  "Airports and Transport Facilities",
+                  "Commercial Buildings and Offices",
+                  "Schools and Colleges",
+                  "Hospitals and Healthcare",
+                  "Shopping Malls and Retail Spaces",
+                  "Warehouses and Industrial Units"
                 ].map((app) => (
                   <li key={app} className="flex items-center gap-2">
                     <div className="h-2 w-2 bg-accent rounded-full" />
@@ -90,6 +90,24 @@ const PublicAddressing = () => {
                 </Button>
               </Link>
             </div>
+
+            {/* Standards and Compliances */}
+            <div className="bg-accent/10 rounded-2xl p-8 mt-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Standards and Compliances</h3>
+              <ul className="space-y-3">
+                {[
+                  "IEC Audio and Safety Standards",
+                  "Fire Safety Integration Guidelines",
+                  "Local Safety and Building Regulations",
+                  "Emergency Communication Compliance"
+                ].map((standard) => (
+                  <li key={standard} className="flex items-start gap-2">
+                    <div className="h-2 w-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                    <span className="text-foreground">{standard}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -99,17 +117,17 @@ const PublicAddressing = () => {
             {
               icon: Volume2,
               title: "Clear Communication",
-              description: "Ensure critical messages are heard clearly throughout your facility"
+              description: "Make sure announcements are heard clearly across all areas without distortion or gaps."
             },
             {
               icon: Radio,
               title: "Emergency Ready",
-              description: "Rapid response capability for emergency alerts and safety announcements"
+              description: "Deliver instant alerts during emergencies with systems that support priority broadcasting."
             },
             {
               icon: Users,
-              title: "Audience Reach",
-              description: "Reach large audiences with zoned announcements and targeted messaging"
+              title: "Wide Coverage",
+              description: "Reach different zones or specific areas with targeted announcements when needed."
             }
           ].map((benefit) => (
             <div key={benefit.title} className="bg-card rounded-2xl p-8 shadow-soft">
@@ -124,9 +142,9 @@ const PublicAddressing = () => {
 
         {/* CTA Section */}
         <div className="bg-accent/10 rounded-2xl p-12 text-center">
-          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Implement Public Addressing Today</h2>
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Improve Communication Across Your Facility</h2>
           <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-            Deploy a reliable PA system for effective communication and emergency preparedness.
+            Set up a reliable public addressing system for daily use and emergency situations.
           </p>
           <Link to="/#contact">
             <Button variant="accent" size="lg">

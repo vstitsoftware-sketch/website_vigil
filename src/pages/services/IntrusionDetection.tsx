@@ -17,11 +17,11 @@ const IntrusionDetection = () => {
               <AlertTriangle className="h-8 w-8" />
             </div>
             <div>
-              <h1 className="font-serif text-4xl md:text-5xl font-bold">Intrusion Detection & Alarm Systems</h1>
+              <h1 className="font-serif text-4xl md:text-5xl font-bold">Intrusion Detection and Alarm Systems</h1>
             </div>
           </div>
           <p className="text-primary-foreground/90 text-lg max-w-3xl">
-            Advanced perimeter security and intrusion detection for complete protection.
+            Reliable security systems to detect unauthorized access and alert you instantly.
           </p>
         </div>
       </div>
@@ -34,26 +34,26 @@ const IntrusionDetection = () => {
             <div className="bg-card rounded-2xl p-8 shadow-soft mb-8">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Overview</h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                Our intrusion detection and alarm systems provide comprehensive protection against unauthorized access and security breaches. Using advanced sensor technology and intelligent monitoring, we detect threats instantly and alert authorities.
+                Our intrusion detection and alarm systems help protect your property by identifying unauthorized access in real time. Using a combination of sensors and monitoring systems, you are alerted immediately when a breach is detected.
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+                We design systems that cover both perimeter and internal areas, creating multiple layers of security. This helps reduce the chances of intrusion and ensures quick response if any activity is detected.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                From perimeter protection to interior monitoring, our systems create multiple layers of security for complete peace of mind.
+                The system can be connected to monitoring centers, mobile devices, and other security setups like CCTV, giving you complete visibility and control over your premises.
               </p>
             </div>
 
-            {/* Key Features */}
+            {/* Key Components */}
             <div className="bg-card rounded-2xl p-8 shadow-soft">
-              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Security Features</h2>
+              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Key Components</h2>
               <div className="space-y-4">
                 {[
-                  "Motion and vibration sensors",
-                  "Door and window contact sensors",
-                  "Perimeter fence protection",
-                  "Glass break detection",
-                  "Intelligent alarm processing",
-                  "24/7 monitoring center connectivity",
-                  "Mobile notifications & alerts",
-                  "Integration with video surveillance"
+                  "Motion and Vibration Sensors",
+                  "Door and Window Contact Sensors",
+                  "Perimeter Protection Systems",
+                  "Glass Break Detection Sensors",
+                  "Alarm Control Panel and Notification System"
                 ].map((feature) => (
                   <div key={feature} className="flex items-start gap-4">
                     <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
@@ -66,16 +66,16 @@ const IntrusionDetection = () => {
 
           {/* Sidebar */}
           <div>
-            <div className="bg-accent/10 rounded-2xl p-8 sticky top-20">
-              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Protection Areas</h3>
+            <div className="bg-accent/10 rounded-2xl p-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Industries We Serve</h3>
               <ul className="space-y-3 mb-8">
                 {[
-                  "Perimeter Security",
-                  "Building Entrances",
-                  "Windows & Doors",
-                  "Valuables Storage",
-                  "Server Rooms",
-                  "Executive Areas"
+                  "Residential Complexes",
+                  "Commercial Buildings and Offices",
+                  "Warehouses and Storage Facilities",
+                  "Retail Stores and Showrooms",
+                  "Banks and Financial Institutions",
+                  "Industrial Sites"
                 ].map((area) => (
                   <li key={area} className="flex items-center gap-2">
                     <div className="h-2 w-2 bg-accent rounded-full" />
@@ -90,6 +90,24 @@ const IntrusionDetection = () => {
                 </Button>
               </Link>
             </div>
+
+            {/* Standards and Compliances */}
+            <div className="bg-accent/10 rounded-2xl p-8 mt-8">
+              <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Standards and Compliances</h3>
+              <ul className="space-y-3">
+                {[
+                  "IEC Security System Standards",
+                  "Alarm System Safety Guidelines",
+                  "Local Security and Surveillance Regulations",
+                  "Data Security and Privacy Standards"
+                ].map((standard) => (
+                  <li key={standard} className="flex items-start gap-2">
+                    <div className="h-2 w-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                    <span className="text-foreground">{standard}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -97,19 +115,19 @@ const IntrusionDetection = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {[
             {
-              icon: Shield,
-              title: "Multi-Layer Protection",
-              description: "Detect threats at multiple points with sensors and detection systems"
-            },
-            {
               icon: Bell,
               title: "Instant Alerts",
-              description: "Receive immediate notifications when intrusion is detected"
+              description: "Get immediate notifications when any suspicious activity is detected."
+            },
+            {
+              icon: Shield,
+              title: "Layered Security",
+              description: "Protect both the outer perimeter and internal areas for better coverage."
             },
             {
               icon: Zap,
-              title: "Rapid Response",
-              description: "Enable fast response from security teams or law enforcement"
+              title: "Better Control",
+              description: "Monitor and manage your security system easily through mobile or centralized access."
             }
           ].map((benefit) => (
             <div key={benefit.title} className="bg-card rounded-2xl p-8 shadow-soft">
@@ -124,13 +142,13 @@ const IntrusionDetection = () => {
 
         {/* CTA Section */}
         <div className="bg-accent/10 rounded-2xl p-12 text-center">
-          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Secure Your Perimeter Today</h2>
+          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Secure Your Property with Confidence</h2>
           <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-            Implement our intrusion detection system for maximum protection and peace of mind.
+            Install a reliable intrusion detection system to protect your premises at all times.
           </p>
           <Link to="/#contact">
             <Button variant="accent" size="lg">
-              Schedule Security Assessment
+              Schedule Consultation
             </Button>
           </Link>
         </div>
