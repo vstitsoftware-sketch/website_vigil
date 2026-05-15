@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['"Microsoft Sans Serif"', 'Segoe UI', 'Tahoma', 'sans-serif'],
-        serif: ['"Microsoft Sans Serif"', 'Segoe UI', 'Tahoma', 'sans-serif'],
+        sans: ['Inter', '"Microsoft Sans Serif"', 'Segoe UI', 'Tahoma', 'sans-serif'],
+        serif: ['Inter', '"Microsoft Sans Serif"', 'Segoe UI', 'Tahoma', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

@@ -39,9 +39,6 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <Button variant="accent" size="sm">
-              Get Started
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -68,9 +65,6 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <Button variant="accent" size="sm" className="w-fit">
-                Get Started
-              </Button>
             </div>
           </div>
         )}

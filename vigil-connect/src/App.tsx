@@ -23,7 +23,7 @@ import KeyManagement from "./pages/services/KeyManagement";
 import CareersPage from "./pages/CareersPage";
 import JobDetailsPage from "./pages/JobDetailsPage";
 import HRPortal from "./pages/HRPortal";
-import VigilCore from "./pages/products/VigilCore";
+import VigilITMS from "./pages/products/VigilITMS";
 import VigilAnalytics from "./pages/products/VigilAnalytics";
 import VigilSecure from "./pages/products/VigilSecure";
 
@@ -52,7 +52,7 @@ const App = () => (
           <Route path="/services/entrance-security" element={<EntranceSecurity />} />
           <Route path="/services/tour-guard" element={<TourGuard />} />
           <Route path="/services/key-management" element={<KeyManagement />} />
-          <Route path="/products/vigil-core" element={<VigilCore />} />
+          <Route path="/products/vigil-itms" element={<VigilITMS />} />
           <Route path="/products/vigil-vms" element={<VigilAnalytics />} />
           <Route path="/products/vigil-analytics" element={<VigilAnalytics />} />
           <Route path="/products/vigil-secure" element={<VigilSecure />} />

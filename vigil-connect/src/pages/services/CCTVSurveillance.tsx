@@ -1,64 +1,26 @@
 import { Camera, ArrowLeft, CheckCircle2, Shield, Users, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import useEmblaCarousel from "embla-carousel-react";
-import { useEffect, useCallback } from "react";
 
 const CCTVSurveillance = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 30 });
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
-
-  useEffect(() => {
-    const interval = setInterval(scrollNext, 3000);
-    return () => clearInterval(interval);
-  }, [scrollNext]);
-
-  const backgroundImages = [
-    "/cctv-slide-1.jpg",
-    "/cctv-slide-2.png",
-    "/cctv-slide-3.jpg"
-  ];
-
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section with Slider */}
-      <div className="relative text-white overflow-hidden">
-        {/* Background Slider */}
-        <div className="absolute inset-0 z-0">
-          <div className="overflow-hidden h-full" ref={emblaRef}>
-            <div className="flex h-full">
-              {backgroundImages.map((src, index) => (
-                <div className="flex-[0_0_100%] min-w-0 relative h-full" key={index}>
-                  <img
-                    src={src}
-                    alt={`Surveillance Background ${index + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/30" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Content */}
-        <div className="container relative z-10 mx-auto px-4 py-24 md:py-32">
-          <Link to="/#services" className="inline-flex items-center gap-2 mb-6 hover:opacity-80 transition-opacity text-white/90">
+      {/* Header */}
+      <div className="bg-primary text-primary-foreground py-12">
+        <div className="container mx-auto px-4">
+          <Link to="/#services" className="inline-flex items-center gap-2 mb-6 hover:opacity-80 transition-opacity">
             <ArrowLeft className="h-5 w-5" />
             Back
           </Link>
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20">
-              <Camera className="h-8 w-8 text-white" />
+            <div className="w-16 h-16 bg-primary-foreground/20 rounded-xl flex items-center justify-center">
+              <Camera className="h-8 w-8" />
             </div>
             <div>
-              <h1 className="font-serif text-4xl md:text-5xl font-bold text-white leading-tight">AI Enabled CCTV<br />Surveillance System</h1>
+              <h1 className="font-serif text-4xl md:text-5xl font-bold">AI Enabled CCTV Surveillance System</h1>
             </div>
           </div>
-          <p className="text-white/90 text-lg max-w-2xl leading-relaxed">
+          <p className="text-primary-foreground/90 text-lg max-w-3xl">
             Advanced surveillance solutions tailored for manufacturing, government, healthcare, education, banking, hospitality, and more.
           </p>
         </div>

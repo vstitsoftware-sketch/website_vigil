@@ -16,7 +16,7 @@ const trustedPartners = [
     { name: "Olam", logo: "/partners/olam.jpg", description: "Trusted Partner" },
     { name: "Toyota", logo: "/partners/toyota.jpg", description: "Trusted Partner" },
     { name: "GeM (Govt. e Marketplace)", logo: "/partners/gem.webp", description: "Trusted Partner" },
-    { name: "Bharat Petroleum", logo: "/partners/bharat-petroleum.jpg", description: "Trusted Partner" },
+    { name: "Bharat Petroleum", logo: "/partners/BPCL.png", description: "Trusted Partner" },
     { name: "Lakeview Hospital", logo: "/partners/lakeview-hospital.jpg", description: "Trusted Partner" },
     { name: "Hotel Eefa", logo: "/partners/hotel-eefa.png", description: "Trusted Partner" },
     { name: "KLE Society", logo: "/partners/kle-society.png", description: "Trusted Partner" },
@@ -55,7 +55,7 @@ const collaborations = [
 
 const PartnerCard = ({ partner }: { partner: { name: string; logo: string; description: string } }) => (
     <div className="flex flex-col items-center justify-center p-2 transition-all group flex-shrink-0" style={{ width: '200px' }}>
-        <div className="w-24 h-24 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+        <div className={`w-24 h-24 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform ${partner.name === 'Bharat Petroleum' ? 'bg-white p-2 rounded' : ''}`}>
             <img src={partner.logo} alt={partner.name} className="w-full h-full object-contain" />
         </div>
         <h3 className="font-semibold text-foreground text-center text-sm">

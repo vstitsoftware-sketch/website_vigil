@@ -1,44 +1,27 @@
-import { Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
+import { Linkedin } from "lucide-react";
 
 const footerLinks = {
   company: [
     { name: "About Us", href: "#about" },
     { name: "Careers", href: "#careers" },
-    { name: "Press", href: "#" },
-    { name: "Blog", href: "#" },
-  ],
-  services: [
-    { name: "Digital Transformation", href: "#services" },
-    { name: "Business Strategy", href: "#services" },
-    { name: "Cybersecurity", href: "#services" },
-    { name: "Cloud Solutions", href: "#services" },
+    { name: "Contact Us", href: "#contact" },
   ],
   products: [
-    { name: "Vigil Core", href: "#products" },
+    { name: "Vigil ITMS Command Center", href: "#products" },
     { name: "Vigil Analytics", href: "#products" },
     { name: "Vigil Secure", href: "#products" },
-    { name: "Pricing", href: "#" },
-  ],
-  support: [
-    { name: "Help Center", href: "#" },
-    { name: "Documentation", href: "#" },
-    { name: "Contact Us", href: "#contact" },
-    { name: "Status", href: "#" },
   ],
 };
 
 const socialLinks = [
   { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
 ];
 
 const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <a href="#" className="block">
@@ -77,35 +60,9 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Services</h4>
-            <ul className="space-y-3">
-              {footerLinks.services.map((link) => (
-                <li key={link.name}>
-                  <a href={link.href} className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
             <h4 className="font-semibold mb-4">Products</h4>
             <ul className="space-y-3">
               {footerLinks.products.map((link) => (
-                <li key={link.name}>
-                  <a href={link.href} className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-4">Support</h4>
-            <ul className="space-y-3">
-              {footerLinks.support.map((link) => (
                 <li key={link.name}>
                   <a href={link.href} className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                     {link.name}

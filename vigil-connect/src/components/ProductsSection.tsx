@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 
 const products = [
   {
-    name: "Vigil Core",
-    tagline: "Enterprise Resource Planning",
-    description: "All-in-one ERP solution for seamless business operations.",
+    name: "Vigil ITMS",
+    tagline: "Real time AI powered Intelligent Traffic Managent System",
+    description:
+      "AI-powered traffic monitoring and violation enforcement for smart cities, highways, and law enforcement.",
     features: [
-      "Financial Management",
-      "Inventory Control",
-      "HR & Payroll",
-      "CRM Integration",
-      "Real-time Analytics",
+      "OPS Edge AI Node",
+      "Real-Time Command Dashboard",
+      "Secure OpenVPN Tunnel",
+      "Automated Violation Workflow",
     ],
     popular: false,
   },
