@@ -21,28 +21,28 @@ const collaborations = [
 
 const reviews = [
   {
-    name: "Google Review",
+    name: "Customer",
     role: "Verified customer",
     content: "Professional execution, quick response times, and strong support throughout the project. The team handled the deployment smoothly.",
     rating: 5,
     location: "Bengaluru",
   },
   {
-    name: "Google Review",
+    name: "Customer",
     role: "Verified customer",
     content: "The security solution was tailored to our needs and the on-site coordination was excellent from start to finish.",
     rating: 5,
     location: "Mysuru",
   },
   {
-    name: "Google Review",
+    name: "Customer",
     role: "Verified customer",
     content: "Reliable products, thoughtful consultation, and a polished installation process. Definitely a team we would work with again.",
     rating: 5,
     location: "Hubballi",
   },
   {
-    name: "Google Review",
+    name: "Customer",
     role: "Verified customer",
     content: "Clear communication and professional follow-through made the entire engagement easy to trust and manage.",
     rating: 5,
@@ -58,19 +58,18 @@ const TestimonialsSection = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-background px-4 py-2 text-accent text-xs font-semibold uppercase tracking-[0.2em]">
             <Star className="h-4 w-4 fill-accent text-accent" />
-            Google Reviews
+            Testimonials
           </div>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mt-4 mb-6">
-            Real Feedback From Google
+            What Our Clients Say
           </h2>
           <p className="text-lg text-muted-foreground">
-            A selection of review-style feedback designed to reflect the kind of
-            genuine customer responses we showcase from Google Reviews.
+            Genuine customer testimonials from recent projects and engagements.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {reviews.map((review) => (
+          {reviews.slice(0, 4).map((review) => (
             <div
               key={`${review.name}-${review.location}`}
               className="group p-8 bg-card rounded-3xl shadow-soft hover:shadow-elevated transition-all duration-300 relative border border-border/50"
