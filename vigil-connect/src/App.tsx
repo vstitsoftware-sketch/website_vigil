@@ -25,7 +25,6 @@ import JobDetailsPage from "./pages/JobDetailsPage";
 import HRPortal from "./pages/HRPortal";
 import VigilITMS from "./pages/products/VigilITMS";
 import VigilAnalytics from "./pages/products/VigilAnalytics";
-import VigilSecure from "./pages/products/VigilSecure";
 
 const queryClient = new QueryClient();
 
@@ -55,7 +54,6 @@ const App = () => (
           <Route path="/products/vigil-itms" element={<VigilITMS />} />
           <Route path="/products/vigil-vms" element={<VigilAnalytics />} />
           <Route path="/products/vigil-analytics" element={<VigilAnalytics />} />
-          <Route path="/products/vigil-secure" element={<VigilSecure />} />
           <Route path="/contact" element={<Index />} />
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/careers/:id" element={<JobDetailsPage />} />

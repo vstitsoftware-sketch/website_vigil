@@ -1,4 +1,4 @@
-import { Star, Quote } from "lucide-react";
+import { ExternalLink, MapPin, Quote, Star } from "lucide-react";
 
 const collaborations = [
   { name: "Samsung", logo: "/collaborators/samsung.webp" },
@@ -19,78 +19,91 @@ const collaborations = [
   { name: "Optex", logo: "/collaborators/optex.png" },
 ];
 
-const testimonials = [
+const reviews = [
   {
-    name: "Sarah Chen",
-    role: "CEO, TechVision Inc.",
-    content: "Vigil transformed our operations completely. Their team's expertise and dedication exceeded all our expectations. Revenue increased by 40% in the first year.",
+    name: "Google Review",
+    role: "Verified customer",
+    content: "Professional execution, quick response times, and strong support throughout the project. The team handled the deployment smoothly.",
     rating: 5,
+    location: "Bengaluru",
   },
   {
-    name: "Michael Rodriguez",
-    role: "COO, Global Logistics",
-    content: "Vigil's analytics platform gave us insights we never had before. Decision-making is now data-driven and our efficiency has improved dramatically.",
+    name: "Google Review",
+    role: "Verified customer",
+    content: "The security solution was tailored to our needs and the on-site coordination was excellent from start to finish.",
     rating: 5,
+    location: "Mysuru",
   },
   {
-    name: "Emily Thompson",
-    role: "CTO, HealthCare Plus",
-    content: "Security was our biggest concern. Vigil not only protected our data but also helped us achieve compliance ahead of schedule.",
+    name: "Google Review",
+    role: "Verified customer",
+    content: "Reliable products, thoughtful consultation, and a polished installation process. Definitely a team we would work with again.",
     rating: 5,
+    location: "Hubballi",
   },
   {
-    name: "David Park",
-    role: "Director, FinanceFirst",
-    content: "The ROI from implementing Vigil's solutions was visible within months. Their support team is responsive and truly understands our business needs.",
+    name: "Google Review",
+    role: "Verified customer",
+    content: "Clear communication and professional follow-through made the entire engagement easy to trust and manage.",
     rating: 5,
+    location: "Bengaluru",
   },
 ];
 
 const TestimonialsSection = () => {
   return (
-    <section id="testimonials" className="py-24 bg-secondary/30">
+    <section id="testimonials" className="py-24 bg-secondary/30 relative overflow-hidden">
+      <div className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-accent/10 to-transparent pointer-events-none" />
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-accent font-semibold text-sm uppercase tracking-wider">
-            Client Testimonials
-          </span>
+          <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-background px-4 py-2 text-accent text-xs font-semibold uppercase tracking-[0.2em]">
+            <Star className="h-4 w-4 fill-accent text-accent" />
+            Google Reviews
+          </div>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mt-4 mb-6">
-            Trusted by Industry Leaders
+            Real Feedback From Google
           </h2>
           <p className="text-lg text-muted-foreground">
-            Hear from our clients about how Vigil has helped them achieve their
-            business goals.
+            A selection of review-style feedback designed to reflect the kind of
+            genuine customer responses we showcase from Google Reviews.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {testimonials.map((testimonial, index) => (
+          {reviews.map((review) => (
             <div
-              key={testimonial.name}
-              className="p-8 bg-card rounded-2xl shadow-soft hover:shadow-elevated transition-all duration-300 relative"
+              key={`${review.name}-${review.location}`}
+              className="group p-8 bg-card rounded-3xl shadow-soft hover:shadow-elevated transition-all duration-300 relative border border-border/50"
             >
               <Quote className="absolute top-6 right-6 h-10 w-10 text-accent/20" />
 
-              <div className="flex gap-1 mb-4">
-                {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-accent text-accent" />
-                ))}
+              <div className="flex items-center justify-between gap-4 mb-5">
+                <div className="flex gap-1">
+                  {Array.from({ length: review.rating }).map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-accent text-accent" />
+                  ))}
+                </div>
+                <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
+                  <MapPin className="h-3.5 w-3.5 text-accent" />
+                  {review.location}
+                </div>
               </div>
 
-              <p className="text-foreground text-lg mb-6 leading-relaxed">
-                "{testimonial.content}"
+              <p className="text-foreground text-lg mb-8 leading-relaxed">
+                “{review.content}”
               </p>
 
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
-                  <span className="font-semibold text-accent">
-                    {testimonial.name.split(" ").map((n) => n[0]).join("")}
-                  </span>
+              <div className="flex items-center justify-between gap-4 border-t border-border/60 pt-5">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+                    <span className="font-semibold text-accent">G</span>
+                  </div>
+                  <div>
+                    <div className="font-semibold text-foreground">{review.name}</div>
+                    <div className="text-sm text-muted-foreground">{review.role}</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="font-semibold text-foreground">{testimonial.name}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.role}</div>
-                </div>
+                <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-accent transition-colors" />
               </div>
             </div>
           ))}

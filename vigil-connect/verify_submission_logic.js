@@ -44,7 +44,7 @@ async function verify() {
                 email: "test@example.com",
                 phone: "1234567890",
                 cover_letter: "Testing submission",
-                resume_url: resumePath // Using the corrected column name
+                resume_file_path: resumePath // Use canonical storage path
             };
 
             const { data: insertData, error: insertError } = await supabase

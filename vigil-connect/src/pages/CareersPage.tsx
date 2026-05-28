@@ -55,15 +55,17 @@ const CareersPage = () => {
                         <div className="grid gap-6">
                             {jobs.map((job) => (
                                 <div key={job.id} className="bg-card p-6 rounded-xl shadow-soft hover:shadow-elevated transition-all border border-border/50 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
-                                    <div className="space-y-4">
-                                        <div>
-                                            <h3 className="text-xl font-bold text-foreground group-hover:text-accent transition-colors">
-                                                {job.title}
-                                            </h3>
-                                            <p className="text-muted-foreground mt-1">{job.department}</p>
+                                    <div className="mb-5 w-full">
+                                        <div className="flex items-start justify-between gap-4">
+                                            <div>
+                                                <h3 className="text-xl font-bold text-foreground group-hover:text-accent transition-colors">
+                                                    {job.title}
+                                                </h3>
+                                                <p className="text-muted-foreground mt-1">{job.department}</p>
+                                            </div>
                                         </div>
 
-                                        <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                                        <div className="mt-4 flex flex-wrap gap-4 text-sm text-muted-foreground">
                                             <div className="flex items-center gap-1.5 bg-secondary px-3 py-1 rounded-full">
                                                 <MapPin className="h-3.5 w-3.5" />
                                                 {job.location}

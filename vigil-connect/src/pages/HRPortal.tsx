@@ -27,6 +27,7 @@ import {
 } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { getJobApplications, getJobs, Job, JobApplicationWithDetails } from "@/services/jobApi";
+import { supabase } from "@/lib/supabase";
 import { toast } from "sonner";
 
 const HRPortal = () => {
@@ -36,6 +37,7 @@ const HRPortal = () => {
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedJobFilter, setSelectedJobFilter] = useState("all");
     const [expandedId, setExpandedId] = useState<string | null>(null);
+    const [signedUrls, setSignedUrls] = useState<Record<string, string>>({});
 
     useEffect(() => {
         const fetchData = async () => {
@@ -106,8 +108,30 @@ const HRPortal = () => {
         });
     };
 
-    const toggleExpand = (id: string) => {
-        setExpandedId(expandedId === id ? null : id);
+    const toggleExpand = async (id: string) => {
+        const newId = expandedId === id ? null : id;
+
+        // If expanding, attempt to generate a short-lived signed URL for HR to download.
+        if (newId) {
+            const app = applications.find((a) => a.id === newId);
+            if (app && app.resume_file_path && !app.resume_file_path.startsWith('http') && !signedUrls[newId] && supabase) {
+                try {
+                    const expiresIn = 60 * 60; // 1 hour
+                    const { data, error } = await supabase.storage
+                        .from('resumes')
+                        .createSignedUrl(app.resume_file_path, expiresIn);
+
+                    const signed = (data && ((data as any).signedUrl || (data as any).signedURL || (data as any).signedurl)) || null;
+                    if (signed) {
+                        setSignedUrls((s) => ({ ...s, [newId]: signed }));
+                    }
+                } catch (err) {
+                    console.error('Failed to create signed URL:', err);
+                }
+            }
+        }
+
+        setExpandedId(newId);
     };
 
     return (
@@ -157,7 +181,7 @@ const HRPortal = () => {
                             </div>
                             <div className="bg-card border border-border rounded-xl p-4 text-center">
                                 <div className="text-2xl font-bold text-foreground">
-                                    {applications.filter((a) => a.resume_url).length}
+                                    {applications.filter((a) => a.resume_file_path || a.resume_url).length}
                                 </div>
                                 <div className="text-xs text-muted-foreground mt-1">
                                     With Resumes
@@ -359,23 +383,27 @@ const HRPortal = () => {
 
                                                 {/* Resume */}
                                                 <div className="flex flex-wrap gap-3 pt-2">
-                                                    {app.resume_url ? (
-                                                        <a
-                                                            href={app.resume_url}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                        >
-                                                            <Button variant="outline" size="sm">
-                                                                <Download className="h-4 w-4 mr-2" />
-                                                                Download Resume
-                                                            </Button>
-                                                        </a>
-                                                    ) : (
-                                                        <div className="flex items-center gap-2 text-xs text-muted-foreground bg-secondary/50 px-3 py-2 rounded-lg">
-                                                            <FileText className="h-3.5 w-3.5" />
-                                                            No resume attached
-                                                        </div>
-                                                    )}
+                                                    {(() => {
+                                                        const signed = signedUrls[app.id];
+                                                        const href = signed ?? (app.resume_file_path && app.resume_file_path.startsWith('http') ? app.resume_file_path : app.resume_url);
+                                                        if (href) {
+                                                            return (
+                                                                <a href={href} target="_blank" rel="noopener noreferrer">
+                                                                    <Button variant="outline" size="sm">
+                                                                        <Download className="h-4 w-4 mr-2" />
+                                                                        Download Resume
+                                                                    </Button>
+                                                                </a>
+                                                            );
+                                                        }
+
+                                                        return (
+                                                            <div className="flex items-center gap-2 text-xs text-muted-foreground bg-secondary/50 px-3 py-2 rounded-lg">
+                                                                <FileText className="h-3.5 w-3.5" />
+                                                                No resume attached
+                                                            </div>
+                                                        );
+                                                    })()}
 
                                                     <a href={`mailto:${app.email}`}>
                                                         <Button variant="accent" size="sm">

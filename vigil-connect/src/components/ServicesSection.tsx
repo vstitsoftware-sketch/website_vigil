@@ -115,7 +115,7 @@ const ServicesSection = () => {
             <Link
               key={service.title}
               to={service.link || "#contact"}
-              className="group p-8 bg-card rounded-2xl shadow-soft hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 block"
+              className="group p-8 bg-card rounded-2xl shadow-soft hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 block h-full"
             >
               <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
                 <service.icon className="h-7 w-7 text-accent group-hover:text-accent-foreground transition-colors" />
@@ -123,7 +123,7 @@ const ServicesSection = () => {
               <h3 className="font-serif text-xl font-semibold text-foreground mb-3">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground mb-4">{service.description}</p>
+              <p className="text-muted-foreground mb-4 min-h-[72px]">{service.description}</p>
               <span className="text-accent font-medium text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                 Learn more →
               </span>

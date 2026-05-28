@@ -74,7 +74,7 @@ const AboutSection = () => {
             <div className="absolute bottom-10 left-10 w-72 h-72 bg-blue-500/20 rounded-full blur-[80px] -z-10 animate-pulse" style={{ animationDelay: '1s' }}></div>
 
             {/* Vision Card */}
-            <div className="relative w-full sm:w-[90%] self-start group">
+            <div className="relative w-full group">
               <div className="absolute inset-0 bg-gradient-to-r from-accent to-blue-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
               <div className="relative flex min-h-[260px] flex-col sm:flex-row items-start sm:items-center p-8 bg-card/80 backdrop-blur-xl border border-accent/20 rounded-3xl shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden">
                 {/* Large Background Icon */}
@@ -94,7 +94,7 @@ const AboutSection = () => {
             </div>
 
             {/* Mission Card */}
-            <div className="relative w-full sm:w-[90%] self-end group">
+            <div className="relative w-full group">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-accent rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
               <div className="relative flex min-h-[260px] flex-col sm:flex-row items-start sm:items-center p-8 bg-card/80 backdrop-blur-xl border border-accent/20 rounded-3xl shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden">
                 {/* Large Background Icon */}
@@ -104,9 +104,9 @@ const AboutSection = () => {
                    <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
                    <Target className="h-10 w-10 relative z-10" />
                 </div>
-                <div className="sm:text-right w-full z-10 flex-1">
+                <div className="w-full z-10 flex-1">
                   <h3 className="font-serif text-3xl font-bold bg-gradient-to-r from-foreground/70 to-foreground bg-clip-text text-transparent mb-3">Our Mission</h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed sm:text-right text-justify relative z-10">
+                  <p className="text-lg text-muted-foreground leading-relaxed text-justify relative z-10">
                     To be the major company in providing innovative and impassable safety & security solutions.
                   </p>
                 </div>

@@ -85,7 +85,7 @@ const VigilVMS = () => {
       </div>
 
       <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-8 mb-24">
           <div className="md:col-span-2">
             <div className="bg-card rounded-2xl p-8 shadow-soft mb-8">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Overview</h2>
@@ -219,7 +219,7 @@ const VigilVMS = () => {
           <h3 className="font-serif text-2xl font-bold text-foreground mb-4">Product Demo</h3>
           <div className="mx-auto max-w-2xl">
             <div className="aspect-video">
-              <video controls className="w-full h-full rounded-lg bg-black">
+              <video controls className="w-full rounded-lg bg-black">
                 <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>

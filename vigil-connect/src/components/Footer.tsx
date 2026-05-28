@@ -11,6 +11,12 @@ const footerLinks = {
     { name: "Vigil Analytics", href: "#products" },
     { name: "Vigil Secure", href: "#products" },
   ],
+  services: [
+    { name: "CCTV Surveillance", href: "/services/cctv-surveillance" },
+    { name: "Fire Fighting", href: "/services/firefighting" },
+    { name: "Telecom Solutions", href: "/services/telecom-solutions" },
+    { name: "Automation Systems", href: "/services/automation-systems" },
+  ],
 };
 
 const socialLinks = [
@@ -21,7 +27,7 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <a href="#" className="block">
@@ -63,6 +69,19 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Products</h4>
             <ul className="space-y-3">
               {footerLinks.products.map((link) => (
+                <li key={link.name}>
+                  <a href={link.href} className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-4">Services</h4>
+            <ul className="space-y-3">
+              {footerLinks.services.map((link) => (
                 <li key={link.name}>
                   <a href={link.href} className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                     {link.name}

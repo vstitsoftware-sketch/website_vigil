@@ -54,12 +54,11 @@ const HeroCopy = () => (
     </div>
 
     <h1 className="font-serif text-3xl sm:text-5xl md:text-7xl font-black tracking-tight text-[#2a2218] mb-3 sm:mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-      &ldquo;Empowering Your <span className="text-gradient">Business Growth</span>&rdquo;
+      &ldquo;Empowering Safer,<span className="text-gradient">Smarter Operations</span>&rdquo;
     </h1>
 
     <p className="text-sm sm:text-base md:text-xl text-[#463726]/80 mb-6 sm:mb-10 max-w-2xl mx-auto animate-fade-up px-2 sm:px-0" style={{ animationDelay: "0.2s" }}>
-      Vigil Safety Technologies delivers innovative solutions that transform the way you work.
-      We combine cutting-edge technology with strategic expertise to drive measurable results.
+     Vigil Safety Technologies provides intelligent CCTV systems, real-time video analytics, and enterprise safety solutions designed to strengthen security, reduce risks, and enable rapid decision-making.
     </p>
 
     <div className="flex flex-col gap-2 sm:gap-4 sm:flex-row justify-center animate-fade-up px-2 sm:px-0" style={{ animationDelay: "0.3s" }}>

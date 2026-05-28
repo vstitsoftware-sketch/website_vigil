@@ -18,6 +18,9 @@ export interface JobApplication {
     email: string;
     phone: string;
     cover_letter?: string;
+    // New canonical field: storage object path (e.g. "164..._abc.pdf")
+    resume_file_path?: string;
+    // Deprecated/compatibility: may contain legacy public URL
     resume_url?: string;
 }
 
@@ -32,21 +35,17 @@ export const uploadResume = async (file: File): Promise<string | null> => {
         const fileName = `${Date.now()}_${Math.random().toString(36).substring(2)}.${fileExt}`;
         const filePath = `${fileName}`;
 
-        const { error } = await supabase.storage
+        const { data: uploadData, error } = await supabase.storage
             .from('resumes')
-            .upload(filePath, file);
+            .upload(filePath, file as any);
 
         if (error) {
             console.warn("Resume upload failed (storage bucket may not exist):", error.message);
             return null;
         }
 
-        // Get the public URL for the uploaded file
-        const { data: urlData } = supabase.storage
-            .from('resumes')
-            .getPublicUrl(filePath);
-
-        return urlData?.publicUrl || filePath;
+        // Return canonical storage object path only (do not store public URL here)
+        return (uploadData && (uploadData as any).path) || filePath;
     } catch (err) {
         console.warn("Resume upload error:", err);
         return null;
@@ -103,8 +102,12 @@ export const submitJobApplication = async (application: JobApplication) => {
     if (application.cover_letter) {
         payload.cover_letter = application.cover_letter;
     }
-
-    if (application.resume_url) {
+    // Prefer storing the canonical storage object path in `resume_file_path`.
+    // For backwards compatibility, if only resume_url is available, use that as a fallback.
+    if (application.resume_file_path) {
+        payload.resume_file_path = application.resume_file_path;
+    } else if (application.resume_url) {
+        // Legacy callers may still pass a public URL; preserve it for now.
         payload.resume_url = application.resume_url;
     }
 
@@ -112,28 +115,49 @@ export const submitJobApplication = async (application: JobApplication) => {
         .from('job_applications')
         .insert([payload]);
 
-    if (error && application.resume_url) {
-        // Handle schema variant where resume_file_path exists instead of resume_url.
-        const fallbackPayload: Record<string, unknown> = { ...payload };
-        delete fallbackPayload.resume_url;
-        fallbackPayload.resume_file_path = application.resume_url;
+    if (error) {
+        // Try a compatibility fallback: if we attempted to write `resume_file_path` but the
+        // target schema expects `resume_url`, retry with the alternate column.
+        if (application.resume_file_path) {
+            const fallbackPayload: Record<string, unknown> = { ...payload };
+            delete fallbackPayload.resume_file_path;
+            // Put the path into the legacy `resume_url` column so older schemas can accept it.
+            fallbackPayload.resume_url = application.resume_file_path;
 
-        const { error: fallbackError } = await supabase
-            .from('job_applications')
-            .insert([fallbackPayload]);
+            const { error: fallbackError } = await supabase
+                .from('job_applications')
+                .insert([fallbackPayload]);
 
-        if (fallbackError) {
-            console.error("Supabase insert error:", fallbackError);
-            throw fallbackError;
+            if (fallbackError) {
+                console.error("Supabase insert error:", fallbackError);
+                throw fallbackError;
+            }
+
+            return true;
         }
 
-        return true;
-    }
+        // If we originally wrote `resume_url` and insert failed, try moving it to resume_file_path
+        if (application.resume_url) {
+            const fallbackPayload: Record<string, unknown> = { ...payload };
+            delete fallbackPayload.resume_url;
+            fallbackPayload.resume_file_path = application.resume_url;
 
-    if (error) {
+            const { error: fallbackError } = await supabase
+                .from('job_applications')
+                .insert([fallbackPayload]);
+
+            if (fallbackError) {
+                console.error("Supabase insert error:", fallbackError);
+                throw fallbackError;
+            }
+
+            return true;
+        }
+
         console.error("Supabase insert error:", error);
         throw error;
     }
+
     return true;
 };
 
@@ -147,6 +171,7 @@ export interface JobApplicationWithDetails {
     phone: string;
     cover_letter: string | null;
     resume_url: string | null;
+    resume_file_path: string | null;
     created_at: string;
     jobs: {
         title: string;
@@ -182,7 +207,9 @@ const normalizeApplicationRow = (row: JobApplicationRow): JobApplicationWithDeta
     email: row.email,
     phone: row.phone,
     cover_letter: row.cover_letter ?? null,
-    resume_url: row.resume_url ?? row.resume_file_path ?? null,
+    // Prefer canonical `resume_file_path` if present; keep `resume_url` for backward compatibility.
+    resume_file_path: row.resume_file_path ?? row.resume_url ?? null,
+    resume_url: row.resume_url ?? null,
     created_at: row.created_at ?? row.submitted_at ?? new Date(0).toISOString(),
     jobs: row.jobs ?? null,
 });

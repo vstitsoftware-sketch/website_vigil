@@ -31,8 +31,9 @@ const products = [
   },
   {
     name: "Vigil Secure",
-    tagline: "Cybersecurity Suite",
-    description: "Comprehensive security solutions to protect your digital assets.",
+    tagline: "More Coming Soon",
+    description: "More information will be available soon.",
+    comingSoon: true,
     features: [
       "Threat Detection",
       "Compliance Management",
@@ -45,6 +46,20 @@ const products = [
 ];
 
 const ProductsSection = () => {
+  const origin = typeof window !== "undefined" ? window.location.origin : "";
+
+  const ld = {
+    "@context": "https://schema.org",
+    "@graph": products
+      .filter((p) => !p.comingSoon)
+      .map((p) => ({
+        "@type": "Product",
+        name: p.name,
+        description: p.description,
+        url: `${origin}/products/${p.name.toLowerCase().replace(/\s+/g, "-")}`,
+      })),
+  };
+
   return (
     <section id="products" className="py-24 bg-background">
       <div className="container mx-auto px-4">
@@ -62,60 +77,78 @@ const ProductsSection = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {products.map((product) => (
-            <Link
-              key={product.name}
-              to={`/products/${product.name.toLowerCase().replace(/\s+/g, "-")}`}
-              className={`group block relative p-8 rounded-2xl transition-all duration-300 hover:-translate-y-2 ${
-                product.popular
-                  ? "bg-hero text-primary-foreground shadow-elevated"
-                  : "bg-card shadow-soft hover:shadow-elevated"
-              }`}
-            >
-              {product.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="bg-accent-gradient text-accent-foreground text-xs font-semibold px-4 py-1 rounded-full">
-                    Most Popular
-                  </span>
+          {products.map((product) => {
+            const cardClasses = `group block relative p-8 rounded-2xl transition-all duration-300 hover:-translate-y-2 h-full ${
+              product.popular ? "bg-hero text-primary-foreground shadow-elevated" : "bg-card shadow-soft hover:shadow-elevated"
+            }`;
+
+            if (product.comingSoon) {
+              return (
+                <div key={product.name} className={`${cardClasses} flex items-center justify-center`}>
+                  <span className="text-2xl font-semibold text-accent">More Coming Soon</span>
                 </div>
-              )}
+              );
+            }
 
-              <div className="mb-6">
-                <h3 className="font-serif text-2xl font-bold mb-1">{product.name}</h3>
-                <p className={`text-sm ${product.popular ? "text-primary-foreground/70" : "text-accent"}`}>
-                  {product.tagline}
-                </p>
-              </div>
-
-              <p className={`mb-6 ${product.popular ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
-                {product.description}
-              </p>
-
-              <ul className="space-y-3 mb-8">
-                {product.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-3">
-                    <div className={`w-5 h-5 rounded-full flex items-center justify-center ${
-                      product.popular ? "bg-accent" : "bg-accent/10"
-                    }`}>
-                      <Check className={`h-3 w-3 ${product.popular ? "text-accent-foreground" : "text-accent"}`} />
-                    </div>
-                    <span className={`text-sm ${product.popular ? "text-primary-foreground/90" : "text-foreground"}`}>
-                      {feature}
+            return (
+              <article
+                key={product.name}
+                className={cardClasses}
+                title={`Learn more about ${product.name}`}
+                aria-label={`Learn more about ${product.name}`}
+                itemScope
+                itemType="https://schema.org/Product"
+              >
+                {product.popular && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span className="bg-accent-gradient text-accent-foreground text-xs font-semibold px-4 py-1 rounded-full">
+                      Most Popular
                     </span>
-                  </li>
-                ))}
-              </ul>
+                  </div>
+                )}
 
-              <div className="mt-4">
-                <Button
-                  variant={product.popular ? "hero" : "outline"}
-                  className="w-full"
+                <div className="mb-6">
+                  <h3 className="font-serif text-2xl font-bold mb-1" itemProp="name">{product.name}</h3>
+                  <p className={`text-sm ${product.popular ? "text-primary-foreground/70" : "text-accent"}`} itemProp="alternateName">
+                    {product.tagline}
+                  </p>
+                </div>
+
+                <p
+                  className={`mb-6 min-h-[72px] ${product.popular ? "text-primary-foreground/80" : "text-muted-foreground"}`}
+                  itemProp="description"
                 >
-                  Learn More
-                </Button>
-              </div>
-            </Link>
-          ))}
+                  {product.description}
+                </p>
+
+                <ul className="space-y-3 mb-8">
+                  {product.features.map((feature) => (
+                    <li key={feature} className="flex items-center gap-3" itemProp="featureList">
+                      <div className={`w-5 h-5 rounded-full flex items-center justify-center ${
+                        product.popular ? "bg-accent" : "bg-accent/10"
+                      }`}>
+                        <Check className={`h-3 w-3 ${product.popular ? "text-accent-foreground" : "text-accent"}`} />
+                      </div>
+                      <span className={`text-sm ${product.popular ? "text-primary-foreground/90" : "text-foreground"}`}>
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-4">
+                  <Button asChild variant={product.popular ? "hero" : "outline"} className="w-full">
+                    <Link itemProp="url" to={`/products/${product.name.toLowerCase().replace(/\s+/g, "-")}`}>Learn More</Link>
+                  </Button>
+                </div>
+              </article>
+            );
+          })}
+          {/* JSON-LD structured data to assist search engines */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
+          />
         </div>
       </div>
     </section>

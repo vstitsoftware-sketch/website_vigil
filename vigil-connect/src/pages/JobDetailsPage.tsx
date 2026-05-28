@@ -47,19 +47,19 @@ const JobDetailsPage = () => {
         setIsSubmitting(true);
         try {
             // 1. Try to upload Resume (non-blocking if storage fails)
-            let resumeUrl: string | undefined = undefined;
+            let resumeFilePath: string | undefined = undefined;
             if (file) {
-                const uploadedUrl = await uploadResume(file);
-                if (uploadedUrl) {
-                    resumeUrl = uploadedUrl;
+                const uploadedPath = await uploadResume(file);
+                if (uploadedPath) {
+                    resumeFilePath = uploadedPath;
                 }
             }
 
-            // 2. Save to Database (always succeeds even without resume URL)
+            // 2. Save to Database (always succeeds even without resume path)
             await submitJobApplication({
                 job_id: job.id,
                 ...formData,
-                resume_url: resumeUrl,
+                resume_file_path: resumeFilePath,
             });
 
             toast.success("Application submitted successfully!");

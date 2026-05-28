@@ -1,6 +1,7 @@
 import { Camera, ArrowLeft, CheckCircle2, Shield, Users, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import ServicePageMenu from "@/components/ServicePageMenu";
 
 const CCTVSurveillance = () => {
   return (
@@ -8,10 +9,7 @@ const CCTVSurveillance = () => {
       {/* Header */}
       <div className="bg-primary text-primary-foreground py-12">
         <div className="container mx-auto px-4">
-          <Link to="/#services" className="inline-flex items-center gap-2 mb-6 hover:opacity-80 transition-opacity">
-            <ArrowLeft className="h-5 w-5" />
-            Back
-          </Link>
+          <ServicePageMenu />
           <div className="flex items-center gap-4 mb-6">
             <div className="w-16 h-16 bg-primary-foreground/20 rounded-xl flex items-center justify-center">
               <Camera className="h-8 w-8" />
@@ -28,16 +26,16 @@ const CCTVSurveillance = () => {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-8 mb-24">
           {/* Overview */}
           <div className="md:col-span-2">
             <div className="bg-card rounded-2xl p-8 shadow-soft mb-8">
               <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Overview</h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-                AI-enabled surveillance cameras use artificial intelligence to analyze video in real time. They can detect objects, recognize faces, and identify unusual behavior, reducing the need for constant human monitoring.
+                AI-enabled surveillance cameras use artificial intelligence to analyze video footage in real time and automatically detect important events. Unlike traditional CCTV systems that only record video, these systems can identify objects, recognize faces, detect unusual movement, and monitor restricted areas without the need for continuous human observation. This helps improve security response time and reduces dependency on manual monitoring.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
-                These systems improve security and safety  by sending instant alerts of specific  events and offering features like facial recognition, license plate recognition and traffic Violations . They are widely used in residentials , businesses, and public spaces.
+                These systems can generate instant alerts for events such as unauthorized access, perimeter breaches, traffic violations, and suspicious activity. Features like facial recognition, license plate recognition, people counting, and smart analytics provide better visibility and control across large facilities and public spaces. AI surveillance solutions are widely used in residential communities, businesses, industries, and commercial environments for smarter and more efficient security management.
               </p>
             </div>
 
@@ -63,7 +61,7 @@ const CCTVSurveillance = () => {
 
           {/* Sidebar */}
           <div>
-            <div className="bg-accent/10 rounded-2xl p-8">
+            <div className="bg-accent/10 rounded-2xl p-8 mb-8">
               <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Industries We Serve</h3>
               <ul className="space-y-3 mb-8">
                 {[
@@ -89,7 +87,7 @@ const CCTVSurveillance = () => {
             </div>
 
             {/* Standards and Compliances */}
-            <div className="bg-accent/10 rounded-2xl p-8 mt-8">
+            <div className="bg-accent/10 rounded-2xl p-8">
               <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Standards and Compliances</h3>
               <ul className="space-y-3">
                 {[
@@ -109,7 +107,7 @@ const CCTVSurveillance = () => {
         </div>
 
         {/* Benefits */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-8 mb-24">
           {[
             {
               icon: Shield,

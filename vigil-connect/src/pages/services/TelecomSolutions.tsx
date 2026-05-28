@@ -1,6 +1,7 @@
 import { Wifi, ArrowLeft, CheckCircle2, Zap, Globe, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import ServicePageMenu from "@/components/ServicePageMenu";
 
 const TelecomSolutions = () => {
   return (
@@ -8,10 +9,7 @@ const TelecomSolutions = () => {
       {/* Header */}
       <div className="bg-primary text-primary-foreground py-12">
         <div className="container mx-auto px-4">
-          <Link to="/#services" className="inline-flex items-center gap-2 mb-6 hover:opacity-80 transition-opacity">
-            <ArrowLeft className="h-5 w-5" />
-            Back
-          </Link>
+          <ServicePageMenu />
           <div className="flex items-center gap-4 mb-6">
             <div className="w-16 h-16 bg-primary-foreground/20 rounded-xl flex items-center justify-center">
               <Wifi className="h-8 w-8" />
@@ -28,7 +26,7 @@ const TelecomSolutions = () => {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-8 mb-24">
           {/* Overview */}
           <div className="md:col-span-2">
             <div className="bg-card rounded-2xl p-8 shadow-soft mb-8">
@@ -66,7 +64,7 @@ const TelecomSolutions = () => {
 
           {/* Sidebar */}
           <div>
-            <div className="bg-accent/10 rounded-2xl p-8">
+            <div className="bg-accent/10 rounded-2xl p-8 mb-8">
               <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Industries We Serve</h3>
               <ul className="space-y-3 mb-8">
                 {[
@@ -92,7 +90,7 @@ const TelecomSolutions = () => {
             </div>
 
             {/* Standards and Compliances */}
-            <div className="bg-accent/10 rounded-2xl p-8 mt-8">
+            <div className="bg-accent/10 rounded-2xl p-8">
               <h3 className="font-serif text-2xl font-bold text-foreground mb-6">Standards and Compliances</h3>
               <ul className="space-y-3">
                 {[
@@ -111,7 +109,7 @@ const TelecomSolutions = () => {
           </div>
         </div>
         {/* Benefits */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-8 mb-24">
           {[
             {
               icon: Globe,
