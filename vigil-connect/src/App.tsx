@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import ScrollToTop from "./components/ScrollToTop";
 import NotFound from "./pages/NotFound";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfUse from "./pages/TermsOfUse";
 import CCTVSurveillance from "./pages/services/CCTVSurveillance";
 import FireFighting from "./pages/services/FireFighting";
 import TelecomSolutions from "./pages/services/TelecomSolutions";
@@ -58,6 +60,8 @@ const App = () => (
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/careers/:id" element={<JobDetailsPage />} />
           <Route path="/hr-portal" element={<HRPortal />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-use" element={<TermsOfUse />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -2,27 +2,18 @@ import { AlertTriangle, ArrowLeft, CheckCircle2, Shield, Zap, Bell } from "lucid
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ServicePageMenu from "@/components/ServicePageMenu";
+import ServiceHero from "@/components/ServiceHero";
 
 const IntrusionDetection = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-primary text-primary-foreground py-12">
-        <div className="container mx-auto px-4">
-          <ServicePageMenu />
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 bg-primary-foreground/20 rounded-xl flex items-center justify-center">
-              <AlertTriangle className="h-8 w-8" />
-            </div>
-            <div>
-              <h1 className="font-serif text-4xl md:text-5xl font-bold">Intrusion Detection and Alarm Systems</h1>
-            </div>
-          </div>
-          <p className="text-primary-foreground/90 text-lg max-w-3xl">
-            Reliable security systems to detect unauthorized access and alert you instantly.
-          </p>
-        </div>
-      </div>
+      <ServiceHero
+        title="Intrusion Detection and Alarm Systems"
+        description="Reliable security systems to detect unauthorized access and alert you instantly."
+        image="/services_hero_posters/intrusion-detection-and-alarm-system.png"
+        menu={<ServicePageMenu />}
+      />
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">

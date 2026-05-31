@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-05-31T11:47:10.334Z",
+  "mode": "supabase_service_role",
+  "dbTablesCount": null,
+  "dbTables": [],
+  "repoReferencedTables": [
+    "enquiries",
+    "job_applications",
+    "jobs",
+    "resumes",
+    "storage"
+  ],
+  "tableReferences": {},
+  "unusedTables": [],
+  "referencedNotInDb": [],
+  "referencedTableStatus": {
+    "enquiries": "present",
+    "job_applications": "present",
+    "jobs": "present",
+    "resumes": "missing",
+    "storage": "missing"
+  },
+  "notes": [
+    "Could not expose database catalog; falling back to validating referenced tables only."
+  ]
+}

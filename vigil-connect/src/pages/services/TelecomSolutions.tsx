@@ -2,27 +2,18 @@ import { Wifi, ArrowLeft, CheckCircle2, Zap, Globe, Smartphone } from "lucide-re
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ServicePageMenu from "@/components/ServicePageMenu";
+import ServiceHero from "@/components/ServiceHero";
 
 const TelecomSolutions = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-primary text-primary-foreground py-12">
-        <div className="container mx-auto px-4">
-          <ServicePageMenu />
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 bg-primary-foreground/20 rounded-xl flex items-center justify-center">
-              <Wifi className="h-8 w-8" />
-            </div>
-            <div>
-              <h1 className="font-serif text-4xl md:text-5xl font-bold">Telecom Solutions</h1>
-            </div>
-          </div>
-          <p className="text-primary-foreground/90 text-lg max-w-3xl">
-            Scalable and reliable communication infrastructure designed to keep your enterprise connected, productive, and future-ready.
-          </p>
-        </div>
-      </div>
+      <ServiceHero
+        title="Telecom Solutions"
+        description="Scalable and reliable communication infrastructure designed to keep your enterprise connected, productive, and future-ready."
+        image="/services_hero_posters/telecom-solutions.png"
+        menu={<ServicePageMenu />}
+      />
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">

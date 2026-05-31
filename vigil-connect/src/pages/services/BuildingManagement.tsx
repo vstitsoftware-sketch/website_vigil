@@ -2,27 +2,18 @@ import { Building2, ArrowLeft, CheckCircle2, Zap, Thermometer, Lightbulb } from 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ServicePageMenu from "@/components/ServicePageMenu";
+import ServiceHero from "@/components/ServiceHero";
 
 const BuildingManagement = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-primary text-primary-foreground py-12">
-        <div className="container mx-auto px-4">
-          <ServicePageMenu />
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 bg-primary-foreground/20 rounded-xl flex items-center justify-center">
-              <Building2 className="h-8 w-8" />
-            </div>
-            <div>
-              <h1 className="font-serif text-4xl md:text-5xl font-bold">Building Management and ELV Systems</h1>
-            </div>
-          </div>
-          <p className="text-primary-foreground/90 text-lg max-w-3xl">
-            Integrated systems to manage lighting, HVAC, security, and other building functions from a single platform.
-          </p>
-        </div>
-      </div>
+         <ServiceHero
+           title="Building Management System"
+           description="Integrated smart building management for HVAC, lighting, energy, and facility operations to improve efficiency and occupant comfort."
+           image="/services_hero_posters/building-management-and-elv.png"
+           menu={<ServicePageMenu />}
+         />
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">

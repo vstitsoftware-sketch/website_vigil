@@ -4,20 +4,20 @@ import { Menu, X, ArrowLeft } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const serviceLinks = [
-  { title: "CCTV", link: "/services/cctv-surveillance" },
-  { title: "Fire Fighting", link: "/services/firefighting" },
-  { title: "Telecom", link: "/services/telecom-solutions" },
-  { title: "Automation", link: "/services/automation-systems" },
-  { title: "Time Attendance", link: "/services/time-attendance" },
-  { title: "Public Address", link: "/services/public-addressing" },
-  { title: "Commercial Displays", link: "/services/commercial-displays" },
-  { title: "Vehicle Tracking", link: "/services/vehicle-tracking" },
-  { title: "Building Management", link: "/services/building-management" },
-  { title: "Intrusion Detection", link: "/services/intrusion-detection" },
-  { title: "Access Control", link: "/services/access-control" },
-  { title: "Entrance Security", link: "/services/entrance-security" },
-  { title: "Tour Guard", link: "/services/tour-guard" },
-  { title: "Key Management", link: "/services/key-management" },
+  { title: "AI Enabled CCTV Surveillance System", link: "/services/cctv-surveillance" },
+  { title: "Fire Fighting Systems", link: "/services/firefighting" },
+  { title: "Telecom Solutions", link: "/services/telecom-solutions" },
+  { title: "Automation Systems", link: "/services/automation-systems" },
+  { title: "Time Attendance and Payroll Solutions", link: "/services/time-attendance" },
+  { title: "Public Addressing System", link: "/services/public-addressing" },
+  { title: "Commercial Display and Signages", link: "/services/commercial-displays" },
+  { title: "Vehicle Tracking Systems", link: "/services/vehicle-tracking" },
+  { title: "Building Management System", link: "/services/building-management" },
+  { title: "Intrusion Detection and Alarm Systems", link: "/services/intrusion-detection" },
+  { title: "Access Control Systems", link: "/services/access-control" },
+  { title: "Entrance Security Systems", link: "/services/entrance-security" },
+  { title: "Tour Guard System", link: "/services/tour-guard" },
+  { title: "Key Management Systems", link: "/services/key-management" },
 ];
 
 const ServicePageMenu = () => {
@@ -76,9 +76,12 @@ const ServicePageMenu = () => {
                     key={service.link}
                     to={service.link}
                     onClick={() => setOpen(false)}
-                    className={isActive ? "block w-full rounded px-3 py-2 bg-white/20 text-white" : "block w-full rounded px-3 py-2 text-white hover:bg-white/10"}
+                    title={service.title}
+                    className={isActive ? "block w-full min-w-0 overflow-hidden rounded px-3 py-2 bg-white/20 text-white" : "block w-full min-w-0 overflow-hidden rounded px-3 py-2 text-white hover:bg-white/10"}
                   >
-                    {service.title}
+                    <span className="block truncate">
+                      {service.title}
+                    </span>
                   </Link>
                 );
               })}

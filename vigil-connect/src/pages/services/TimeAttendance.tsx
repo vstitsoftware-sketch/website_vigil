@@ -2,27 +2,18 @@ import { Clock, ArrowLeft, CheckCircle2, Users, Zap, BarChart } from "lucide-rea
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ServicePageMenu from "@/components/ServicePageMenu";
+import ServiceHero from "@/components/ServiceHero";
 
 const TimeAttendance = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-primary text-primary-foreground py-12">
-        <div className="container mx-auto px-4">
-          <ServicePageMenu />
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 bg-primary-foreground/20 rounded-xl flex items-center justify-center">
-              <Clock className="h-8 w-8" />
-            </div>
-            <div>
-              <h1 className="font-serif text-4xl md:text-5xl font-bold">Time Attendance and Payroll Solutions</h1>
-            </div>
-          </div>
-          <p className="text-primary-foreground/90 text-lg max-w-3xl">
-            Simple and reliable systems to track attendance, manage payroll, and reduce manual HR work.
-          </p>
-        </div>
-      </div>
+      <ServiceHero
+        title="Time Attendance and Payroll Solutions"
+        description="Simple and reliable systems to track attendance, manage payroll, and reduce manual HR work."
+        image="/services_hero_posters/time-attendance.png"
+        menu={<ServicePageMenu />}
+      />
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">

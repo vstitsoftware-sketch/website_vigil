@@ -1,4 +1,5 @@
 import { Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const footerLinks = {
   company: [
@@ -97,12 +98,12 @@ const Footer = () => {
             © 2024 Vigil Safety Technologies. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-primary-foreground/60">
-            <a href="#" className="hover:text-primary-foreground transition-colors">
+            <Link to="/privacy" className="hover:text-primary-foreground transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-primary-foreground transition-colors">
-              Terms of Service
-            </a>
+            </Link>
+            <Link to="/terms-of-use" className="hover:text-primary-foreground transition-colors">
+              Terms of Use
+            </Link>
             <a href="#" className="hover:text-primary-foreground transition-colors">
               Cookies
             </a>

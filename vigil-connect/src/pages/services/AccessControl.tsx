@@ -2,27 +2,18 @@ import { Lock, ArrowLeft, CheckCircle2, Users, Zap, Shield } from "lucide-react"
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ServicePageMenu from "@/components/ServicePageMenu";
+import ServiceHero from "@/components/ServiceHero";
 
 const AccessControl = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-primary text-primary-foreground py-12">
-        <div className="container mx-auto px-4">
-          <ServicePageMenu />
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 bg-primary-foreground/20 rounded-xl flex items-center justify-center">
-              <Lock className="h-8 w-8" />
-            </div>
-            <div>
-              <h1 className="font-serif text-4xl md:text-5xl font-bold">Access Control Systems</h1>
-            </div>
-          </div>
-          <p className="text-primary-foreground/90 text-lg max-w-3xl">
-            Simple and secure access management for controlled entry across your facility.
-          </p>
-        </div>
-      </div>
+      <ServiceHero
+        title="Access Control Systems"
+        description="Simple and secure access management for controlled entry across your facility."
+        image="/services_hero_posters/access-control-system.png"
+        menu={<ServicePageMenu />}
+      />
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">

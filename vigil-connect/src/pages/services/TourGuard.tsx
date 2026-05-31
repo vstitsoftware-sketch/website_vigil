@@ -2,27 +2,18 @@ import { Footprints, ArrowLeft, CheckCircle2, Users, MapIcon, BarChart } from "l
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ServicePageMenu from "@/components/ServicePageMenu";
+import ServiceHero from "@/components/ServiceHero";
 
 const TourGuard = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-primary text-primary-foreground py-12">
-        <div className="container mx-auto px-4">
-          <ServicePageMenu />
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 bg-primary-foreground/20 rounded-xl flex items-center justify-center">
-              <Footprints className="h-8 w-8" />
-            </div>
-            <div>
-              <h1 className="font-serif text-4xl md:text-5xl font-bold">Tour Guard System</h1>
-            </div>
-          </div>
-          <p className="text-primary-foreground/90 text-lg max-w-3xl">
-            Automated patrol monitoring to track guard activity and ensure every checkpoint is covered.
-          </p>
-        </div>
-      </div>
+      <ServiceHero
+        title="Tour Guard System"
+        description="Automated patrol monitoring to track guard activity and ensure every checkpoint is covered."
+        image="/services_hero_posters/tour-guard.png"
+        menu={<ServicePageMenu />}
+      />
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">

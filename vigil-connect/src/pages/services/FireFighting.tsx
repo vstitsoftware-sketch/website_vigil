@@ -2,27 +2,18 @@ import { Flame, ArrowLeft, CheckCircle2, AlertTriangle, Activity, Shield } from 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ServicePageMenu from "@/components/ServicePageMenu";
+import ServiceHero from "@/components/ServiceHero";
 
 const FireFighting = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-primary text-primary-foreground py-12">
-        <div className="container mx-auto px-4">
-          <ServicePageMenu />
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 bg-primary-foreground/20 rounded-xl flex items-center justify-center">
-              <Flame className="h-8 w-8" />
-            </div>
-            <div>
-              <h1 className="font-serif text-4xl md:text-5xl font-bold">Fire Fighting Systems</h1>
-            </div>
-          </div>
-          <p className="text-primary-foreground/90 text-lg max-w-3xl">
-            End-to-end fire protection solutions—from early detection and alarm systems to advanced suppression—engineered to safeguard lives, assets, and operations while meeting stringent safety standards.
-          </p>
-        </div>
-      </div>
+      <ServiceHero
+        title="Fire Fighting Systems"
+        description="End-to-end fire protection solutions—from early detection and alarm systems to advanced suppression—engineered to safeguard lives, assets, and operations while meeting stringent safety standards."
+        image="/services_hero_posters/fire-fighting-system.png"
+        menu={<ServicePageMenu />}
+      />
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">
