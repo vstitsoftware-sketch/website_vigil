@@ -1,0 +1,117 @@
+import { Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
+
+const footerLinks = {
+  company: [
+    { name: "About Us", href: "#about" },
+    { name: "Careers", href: "#careers" },
+    { name: "Contact Us", href: "#contact" },
+  ],
+  products: [
+    { name: "Vigil ITMS Command Center", href: "#products" },
+    { name: "Vigil Analytics", href: "#products" },
+    { name: "Vigil Secure", href: "#products" },
+  ],
+  services: [
+    { name: "CCTV Surveillance", href: "/services/cctv-surveillance" },
+    { name: "Fire Fighting", href: "/services/firefighting" },
+    { name: "Telecom Solutions", href: "/services/telecom-solutions" },
+    { name: "Automation Systems", href: "/services/automation-systems" },
+  ],
+};
+
+const socialLinks = [
+  { icon: Linkedin, href: "#", label: "LinkedIn" },
+];
+
+const Footer = () => {
+  return (
+    <footer className="bg-primary text-primary-foreground">
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
+          {/* Brand Column */}
+          <div className="lg:col-span-2">
+            <a href="#" className="block">
+              <img src="/Vigil.png" alt="Vigil Everywhere" className="h-44 w-auto" />
+            </a>
+            <p className="text-primary-foreground/70 mt-4 mb-6 max-w-sm">
+              Empowering businesses with innovative solutions and strategic
+              expertise since 2015.
+            </p>
+            <div className="flex gap-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  aria-label={social.label}
+                  className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
+                >
+                  <social.icon className="h-5 w-5" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Links Columns */}
+          <div>
+            <h4 className="font-semibold mb-4">Company</h4>
+            <ul className="space-y-3">
+              {footerLinks.company.map((link) => (
+                <li key={link.name}>
+                  <a href={link.href} className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-4">Products</h4>
+            <ul className="space-y-3">
+              {footerLinks.products.map((link) => (
+                <li key={link.name}>
+                  <a href={link.href} className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-4">Services</h4>
+            <ul className="space-y-3">
+              {footerLinks.services.map((link) => (
+                <li key={link.name}>
+                  <a href={link.href} className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-primary-foreground/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-primary-foreground/60">
+            © 2024 Vigil Safety Technologies. All rights reserved.
+          </p>
+          <div className="flex gap-6 text-sm text-primary-foreground/60">
+            <Link to="/privacy" className="hover:text-primary-foreground transition-colors">
+              Privacy Policy
+            </Link>
+            <Link to="/terms-of-use" className="hover:text-primary-foreground transition-colors">
+              Terms of Use
+            </Link>
+            <a href="#" className="hover:text-primary-foreground transition-colors">
+              Cookies
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
