@@ -41,24 +41,24 @@ const VigilVMS = () => {
   const highlightTiles = [
     {
       icon: Shield,
-      title: "Air-Gapped Security",
-      description: "Designed for fully offline and high-security surveillance environments.",
-      img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
-      alt: "Secure offline surveillance control center dashboard",
+      title: "Real-time AI analytics",
+      description: "AI Enabled surveillance analytics for proactive monitoring and threat detection.",
+      img: "/product_images/AI_analytics.jpeg",
+      alt: "AI analytics view for camera health and surveillance operations",
     },
     {
       icon: Activity,
-      title: "Real-Time Monitoring",
+      title: "Modern Dashboard",
       description: "Monitor camera health, alerts, and incidents from one platform.",
-      img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
-      alt: "Enterprise surveillance monitoring interface with live camera feeds",
+      img: "/product_images/Dashboard.jpeg",
+      alt: "Centralized dashboard showing live surveillance feeds and alerts",
     },
     {
       icon: FileText,
-      title: "Compliance Ready Operations",
-      description: "Detailed audit trails and operator accountability for secure investigations.",
-      img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
-      alt: "Audit logs and incident investigation workflow screen",
+      title: "User Friendly Playback and Incident Management",
+      description: "Intuitive interface for reviewing footage, bookmarking incidents, and generating reports.",
+      img: "/product_images/playback.jpeg",
+      alt: "Playback interface for reviewing recorded surveillance footage",
     },
   ];
 
