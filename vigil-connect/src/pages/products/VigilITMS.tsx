@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ArrowLeft, Shield, Activity, Database, Cpu, Lock, FileText, ClipboardList, Zap } from "lucide-react";
+import { ArrowLeft, Shield, Activity, Database, Cpu, Lock, FileText, Zap, Camera, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -34,22 +34,22 @@ const VigilITMS = () => {
       icon: Activity,
       title: "Live Visibility",
       description: "Gain complete real-time visibility into traffic activity and violations across all monitored locations.",
-      img: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80",
+      img: "/product_images/ITMS_dashboard.jpeg",
       alt: "Modern traffic operations center with live monitoring screens",
     },
     {
-      icon: Shield,
-      title: "Safer Roads",
-      description: "Improve road safety with intelligent monitoring and faster incident response capabilities.",
-      img: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80",
-      alt: "Busy urban roadway monitored through intelligent traffic systems",
+      icon: Camera,
+      title: "Intelligent Violation Capture",
+      description: "Capture and classify traffic violations instantly using camera-based ANPR and helmet detection.",
+      img: "/product_images/1.jpg",
+      alt: "Traffic camera view with vehicle detection and violation overlays",
     },
     {
-      icon: (props: any) => <svg {...props} />,
-      title: "Faster Enforcement",
-      description: "Accelerate violation handling and streamline enforcement operations with automated workflows.",
-      img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
-      alt: "Smart city infrastructure supporting intelligent transportation systems",
+      icon: AlertTriangle,
+      title: "Violation Review Dashboard",
+      description: "Investigate and manage live violation alerts through a searchable command center interface.",
+      img: "/product_images/live_violations.jpeg",
+      alt: "Control center dashboard showing camera-detected violations and alerts",
     },
   ];
 
@@ -102,20 +102,6 @@ const VigilITMS = () => {
     "High Availability System Design",
   ];
 
-  const downloads = [
-    {
-      filename: "Vigil_ITMS_Brochure.pdf",
-      desc: "Overview of the Vigil ITMS platform, capabilities, and operational benefits.",
-    },
-    {
-      filename: "Vigil_ITMS_Smart_City_Solutions.pdf",
-      desc: "Learn how Vigil ITMS supports modern smart city and transportation initiatives.",
-    },
-    {
-      filename: "Vigil_ITMS_Deployment_Overview.pdf",
-      desc: "High-level deployment and operational overview for organizations adopting intelligent traffic management solutions.",
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -206,7 +192,7 @@ const VigilITMS = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {highlightTiles.map((benefit) => (
             <div key={benefit.title} className="bg-card rounded-2xl shadow-soft overflow-hidden flex flex-col">
-              <img src={benefit.img} alt={benefit.alt} className="w-full h-60 object-cover" />
+              <img src={benefit.img} alt={benefit.alt} className="w-full h-60 object-contain bg-muted" />
               <div className="p-4">
                 <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center mb-3">
                   <benefit.icon className="h-5 w-5 text-accent" />
@@ -216,31 +202,6 @@ const VigilITMS = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="bg-card rounded-2xl p-8 mb-12">
-          <h3 className="font-serif text-2xl font-bold text-foreground mb-4">Product Demo</h3>
-          <div className="mx-auto max-w-2xl">
-            <div className="aspect-video">
-              <video controls className="w-full rounded-lg bg-black">
-                <source src="https://cdn.vigil.example/videos/vigil-itms-demo.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-          <p className="text-muted-foreground mt-4 text-center">This demo showcases the complete Vigil ITMS workflow, including OPS edge AI detection, secure VPN event transmission, real-time dashboard streaming, and automated violation management.</p>
-        </div>
-
-        <div className="bg-card rounded-2xl p-8 mb-12 shadow-soft">
-          <h3 className="font-serif text-2xl font-bold text-foreground mb-4">Downloads</h3>
-          <ul className="space-y-3 text-muted-foreground">
-            {downloads.map((d) => (
-              <li key={d.filename} className="flex items-start gap-2">
-                <ClipboardList className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                <span>{`${d.filename} — ${d.desc}`}</span>
-              </li>
-            ))}
-          </ul>
         </div>
 
         <div className="bg-accent/10 rounded-2xl p-12 text-center">

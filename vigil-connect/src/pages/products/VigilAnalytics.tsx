@@ -215,21 +215,6 @@ const VigilVMS = () => {
           ))}
         </div>
 
-        <div className="bg-card rounded-2xl p-8 mb-12">
-          <h3 className="font-serif text-2xl font-bold text-foreground mb-4">Product Demo</h3>
-          <div className="mx-auto max-w-2xl">
-            <div className="aspect-video">
-              <video controls className="w-full rounded-lg bg-black">
-                <source src="https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-          <p className="text-muted-foreground mt-4 text-center">
-            Explore centralized monitoring, incident management, and secure surveillance workflows in Vigil VMS.
-          </p>
-        </div>
-
         <div className="bg-card rounded-2xl p-8 mb-12 shadow-soft">
           <h3 className="font-serif text-2xl font-bold text-foreground mb-4">Downloads</h3>
           <ul className="space-y-3 text-muted-foreground">
@@ -249,7 +234,7 @@ const VigilVMS = () => {
         <div className="bg-accent/10 rounded-2xl p-12 text-center">
           <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Modernize Your Surveillance Operations</h2>
           <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-            Empower your organization with a secure, scalable, and enterprise-ready video management platform built for mission-critical environments. Connect with our team to explore deployment options and live product demonstrations.
+            Empower your organization with a secure, scalable, and enterprise-ready video management platform built for mission-critical environments. Connect with our team to explore deployment options and tailored enterprise solutions.
           </p>
           <Link to="/contact">
             <Button variant="accent" size="lg">

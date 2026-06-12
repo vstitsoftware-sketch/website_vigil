@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Users, Sparkles, ShieldCheck } from "lucide-react";
 
 const benefits = [
-  "Competitive salary & equity",
-  "Flexible remote work",
-  "Health & dental insurance",
-  "Unlimited PTO",
-  "Learning budget",
-  "401(k) matching",
+  "Comprehensive ESI & PF Benefits",
+  "Professional Training & Development",
+  "Overtime Pay Benefits",
+  "Outstation Assignment Allowance",
+  "Weekend Duty Compensation",
+  "Five-Year Gratuity Benefit",
 ];
 
 const CareersSection = () => {

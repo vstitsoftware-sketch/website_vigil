@@ -9,9 +9,9 @@ const products = [
     description:
       "AI-powered traffic monitoring and violation enforcement for smart cities, highways, and law enforcement.",
     features: [
-      "OPS Edge AI Node",
+      "OPS Edge AI",
       "Real-Time Command Dashboard",
-      "Secure OpenVPN Tunnel",
+      "Secure Tunnelling",
       "Automated Violation Workflow",
     ],
     popular: false,
@@ -25,7 +25,6 @@ const products = [
       "Camera Health Analytics",
       "Audit Logging",
       "Incident Bookmarking",
-      "Offline Licensing",
     ],
     popular: true,
   },
